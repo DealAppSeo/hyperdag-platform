@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Floating Buttons Test</title>
+    <style>
+        body { margin: 0; padding: 20px; font-family: Arial, sans-serif; }
+        .test-button {
+            position: fixed;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 50;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .ai-button {
+            bottom: 16px;
+            right: 16px;
+            background: #7c3aed;
+        }
+        .share-button {
+            bottom: 80px;
+            right: 80px;
+            background: #2563eb;
+        }
+        .content {
+            height: 200vh; /* Make page scrollable */
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Floating Buttons Test</h1>
+        <p>This page tests floating button positioning and visibility.</p>
+        <p>You should see two floating buttons:</p>
+        <ul>
+            <li>Purple AI button (bottom-right corner)</li>
+            <li>Blue Share button (above and left of AI button)</li>
+        </ul>
+        <p>Scroll down to test if buttons stay fixed...</p>
+        <div style="height: 100vh;"></div>
+        <p>Both buttons should still be visible here at the bottom of the page.</p>
+    </div>
+    
+    <!-- AI Button -->
+    <button class="test-button ai-button" onclick="alert('AI Button Clicked!')">🤖</button>
+    
+    <!-- Share Button -->
+    <button class="test-button share-button" onclick="alert('Share Button Clicked!')">📤</button>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" class="loading" style="background-color: #0f172a !important;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+    
+    <!-- Performance & SEO -->
+    <meta name="description" content="HyperDAG - Web3-AI Free Market Ecosystem with zero-cost autonomous AI operations">
+    <meta name="theme-color" content="#6366f1">
+    
+    <!-- Mobile Optimization -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="HyperDAG">
+    
+    <!-- Performance Hints -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Security -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="referrer" content="origin-when-cross-origin">
+    
+    <title>HyperDAG - Web3-AI Free Market Ecosystem</title>
+    
+    <!-- CRITICAL: Inline styles FIRST to override browser defaults -->
+    <style>
+      /* Dark background IMMEDIATELY - no white flash! */
+      html {
+        background-color: #0f172a !important;
+        color-scheme: dark;
+        scroll-behavior: smooth;
+      }
+      
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: system-ui, -apple-system, sans-serif;
+        background-color: #0f172a !important;
+        min-height: 100vh;
+      }
+      
+      /* Hide app content until loaded */
+      .loading #root {
+        opacity: 0;
+        visibility: hidden;
+        transition: none;
+      }
+      
+      /* Reveal with smooth fade */
+      .loaded #root {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.15s ease-in-out;
+      }
+      
+      /* Purple spinner on body - VISIBLE even if #root is hidden */
+      body::before {
+        content: '';
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 40px;
+        height: 40px;
+        margin: -20px 0 0 -20px;
+        border: 4px solid rgba(255, 255, 255, 0.1);
+        border-top: 4px solid #8b5cf6;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        z-index: 9999;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      /* Hide spinner once loaded */
+      .loaded body::before {
+        display: none;
+      }
+    </style>
+</head>
+<body style="background-color: #0f172a !important; margin: 0; padding: 0;">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- JS to toggle classes AFTER DOM loads -->
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        const html = document.documentElement;
+        requestAnimationFrame(() => {
+          html.classList.remove('loading');
+          html.classList.add('loaded');
+        });
+      });
+    </script>
+</body>
+</html>

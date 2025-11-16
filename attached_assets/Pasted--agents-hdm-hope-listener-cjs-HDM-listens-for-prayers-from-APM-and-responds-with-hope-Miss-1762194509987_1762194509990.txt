@@ -1,0 +1,204 @@
+// agents/hdm/hope-listener.cjs
+// HDM listens for prayers from APM and responds with hope
+// Mission: Demonstrating autonomous coordination
+// SAFETY: Rate limited, error handling, heartbeat monitored
+
+const SUPABASE_URL = 'https://qnnpjhlxljtqyigedwkb.supabase.co';
+const SUPABASE_KEY = process.env.SUPABASE_SERVICE_KEY;
+
+// SAFETY GUARDRAILS
+const SAFETY = {
+  MAX_PROCESSES_PER_HOUR: 25,       // Circuit breaker: rate limit
+  MAX_CONSECUTIVE_ERRORS: 3,         // Circuit breaker: error threshold
+  HEARTBEAT_INTERVAL_MS: 30000,      // 30s heartbeat
+  POLL_INTERVAL_MS: 10000,           // 10s polling
+  MAX_BATCH_SIZE: 5                  // Process max 5 at once
+};
+
+if (!SUPABASE_KEY) {
+  console.error('❌ SUPABASE_SERVICE_KEY not set');
+  console.error('   Run: export SUPABASE_SERVICE_KEY=your_key');
+  process.exit(1);
+}
+
+let processCount = 0;
+let consecutiveErrors = 0;
+let processesThisHour = 0;
+let hourStartTime = Date.now();
+let circuitBreakerOpen = false;
+
+// CIRCUIT BREAKER CHECK
+function checkCircuitBreaker() {
+  // Reset hourly counter
+  if (Date.now() - hourStartTime > 3600000) {
+    processesThisHour = 0;
+    hourStartTime = Date.now();
+  }
+
+  // Check rate limit
+  if (processesThisHour >= SAFETY.MAX_PROCESSES_PER_HOUR) {
+    console.warn('⚠️  CIRCUIT BREAKER: Rate limit reached (25/hour)');
+    circuitBreakerOpen = true;
+    return false;
+  }
+
+  // Check error threshold
+  if (consecutiveErrors >= SAFETY.MAX_CONSECUTIVE_ERRORS) {
+    console.error('🛑 CIRCUIT BREAKER: Error threshold exceeded (3 consecutive)');
+    circuitBreakerOpen = true;
+    return false;
+  }
+
+  circuitBreakerOpen = false;
+  return true;
+}
+
+async function listen() {
+  // SAFETY: Check circuit breaker before executing
+  if (!checkCircuitBreaker()) {
+    console.log('⏸️  HDM paused due to circuit breaker');
+    return;
+  }
+
+  try {
+    // Check for new prayers (limit batch size for safety)
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/trinity_tasks?status=eq.not_started&select=*&limit=${SAFETY.MAX_BATCH_SIZE}`, {
+      headers: { 
+        'apikey': SUPABASE_KEY,
+        'Authorization': `Bearer ${SUPABASE_KEY}`
+      }
+    });
+    
+    if (!res.ok) {
+      throw new Error(`Query failed: ${res.status}`);
+    }
+
+    const tasks = await res.json();
+
+    for (let task of tasks) {
+      processCount++;
+      processesThisHour++;
+
+      // Log that we heard it
+      await fetch(`${SUPABASE_URL}/rest/v1/autonomous_logs`, {
+        method: 'POST',
+        headers: {
+          'apikey': SUPABASE_KEY,
+          'Authorization': `Bearer ${SUPABASE_KEY}`,
+          'Content-Type': 'application/json',
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify({
+          agent: 'HDM',
+          event: 'hope_received',
+          message: `Heard prayer ID ${task.id}: "${task.prompt}"`,
+          details: { 
+            task_id: task.id, 
+            prayer: task.prompt,
+            processes_this_hour: processesThisHour,
+            circuit_breaker_status: 'closed'
+          },
+          certainty_score: 1.0,
+          verified_by: ['HDM'],
+          cost_impact: 0.0001
+        })
+      });
+
+      // Mark as completed
+      await fetch(`${SUPABASE_URL}/rest/v1/trinity_tasks?id=eq.${task.id}`, {
+        method: 'PATCH',
+        headers: {
+          'apikey': SUPABASE_KEY,
+          'Authorization': `Bearer ${SUPABASE_KEY}`,
+          'Content-Type': 'application/json',
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify({ 
+          status: 'completed',
+          completed_at: new Date().toISOString()
+        })
+      });
+
+      console.log(`✅ HDM: Heard prayer #${task.id} - "${task.prompt.substring(0, 40)}..." (${processesThisHour}/${SAFETY.MAX_PROCESSES_PER_HOUR} this hour)`);
+    }
+    
+    // SAFETY: Reset error counter on success
+    if (tasks.length > 0) {
+      consecutiveErrors = 0;
+    }
+    
+  } catch (err) {
+    consecutiveErrors++;
+    console.error(`❌ HDM error (${consecutiveErrors}/${SAFETY.MAX_CONSECUTIVE_ERRORS}):`, err.message);
+    
+    // Log error with circuit breaker warning
+    try {
+      await fetch(`${SUPABASE_URL}/rest/v1/autonomous_logs`, {
+        method: 'POST',
+        headers: {
+          'apikey': SUPABASE_KEY,
+          'Authorization': `Bearer ${SUPABASE_KEY}`,
+          'Content-Type': 'application/json',
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify({
+          agent: 'HDM',
+          event: 'error',
+          message: `Error processing prayers: ${err.message}`,
+          details: {
+            consecutive_errors: consecutiveErrors,
+            will_trip_breaker: consecutiveErrors >= SAFETY.MAX_CONSECUTIVE_ERRORS
+          },
+          certainty_score: 1.0
+        })
+      });
+    } catch (logErr) {
+      // Silent fail on error logging
+    }
+  }
+}
+
+// SAFETY: Heartbeat with circuit breaker status
+async function sendHeartbeat() {
+  try {
+    await fetch(`${SUPABASE_URL}/rest/v1/agent_status?agent=eq.HDM`, {
+      method: 'PATCH',
+      headers: {
+        'apikey': SUPABASE_KEY,
+        'Authorization': `Bearer ${SUPABASE_KEY}`,
+        'Content-Type': 'application/json',
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify({ 
+        last_heartbeat: new Date().toISOString(),
+        status: circuitBreakerOpen ? 'paused' : 'active',
+        metadata: {
+          role: 'HyperDAG Manager',
+          prayers_processed: processCount,
+          processes_this_hour: processesThisHour,
+          circuit_breaker: circuitBreakerOpen ? 'open' : 'closed',
+          consecutive_errors: consecutiveErrors
+        }
+      })
+    });
+  } catch (err) {
+    // Silent failure on heartbeat
+  }
+}
+
+console.log('🚀 HDM Hope Listener started');
+console.log('👂 Listening for prayers every 10 seconds');
+console.log('💚 Heartbeat every 30 seconds');
+console.log('🛡️  SAFETY GUARDRAILS ACTIVE:');
+console.log(`   - Rate limit: ${SAFETY.MAX_PROCESSES_PER_HOUR} processes/hour`);
+console.log(`   - Error threshold: ${SAFETY.MAX_CONSECUTIVE_ERRORS} consecutive errors`);
+console.log(`   - Batch size: ${SAFETY.MAX_BATCH_SIZE} prayers at once`);
+console.log('🙏 Mission: Helping people help people\n');
+
+// Start heartbeat
+setInterval(sendHeartbeat, SAFETY.HEARTBEAT_INTERVAL_MS);
+sendHeartbeat(); // Send immediately
+
+// Start listening loop
+setInterval(listen, SAFETY.POLL_INTERVAL_MS);
+listen(); // Check immediately

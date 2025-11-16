@@ -1,0 +1,73 @@
+# CRITICAL: Secrets and Environment Variables
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+secrets/
+.secrets/
+
+# API Keys and Tokens
+*_API_KEY*
+*_SECRET*
+*_TOKEN*
+GITHUB_TOKEN
+OPENAI_API_KEY
+ANTHROPIC_API_KEY
+STRIPE_SECRET_KEY
+DATABASE_URL
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+.pnpm-debug.log
+
+# Build outputs
+dist/
+build/
+.next/
+out/
+.cache/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+/tmp/
+
+# Replit
+.replit
+.config/
+.upm/
+replit.nix
+
+# Database
+*.sqlite
+*.sqlite3
+*.db
+
+# Test
+coverage/
+.nyc_output/
+
+# Temporary
+*.tmp
+*.temp
+.temp/
+*.tar.gz
+*.zip
+*.tar.gz
+*.zip

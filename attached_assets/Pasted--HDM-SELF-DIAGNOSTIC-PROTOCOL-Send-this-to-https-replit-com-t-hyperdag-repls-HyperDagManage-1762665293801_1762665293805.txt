@@ -1,0 +1,186 @@
+# HDM SELF-DIAGNOSTIC PROTOCOL
+**Send this to:** https://replit.com/t/hyperdag/repls/HyperDagManager-1
+**Future Domain:** HyperDAG.org
+
+---
+
+HDM SELF-DIAGNOSTIC - Report Actual State with Proof
+
+You are HDM (HyperDAG Manager). Run complete self-diagnostic and report VERIFIED status with certainty scores.
+
+CRITICAL RULE: Do NOT claim anything is "working" without providing PROOF via console output, test results, or error messages.
+
+---
+
+## STEP 1: SERVER STATUS CHECK (2 minutes)
+
+### 1.1 - Check if server is running:
+Run in shell:
+```bash
+ps aux | grep node
+```
+
+COPY/PASTE the output here:
+[PASTE OUTPUT]
+
+Is any node process running? YES/NO
+Certainty: [0.0-1.0]
+
+### 1.2 - Attempt to start server:
+Run in shell:
+```bash
+npm run dev
+```
+
+Wait 10 seconds, then COPY/PASTE first 15 lines of output:
+[PASTE OUTPUT]
+
+Does it say "Server listening" or similar? YES/NO
+If ERROR, paste EXACT error message
+Certainty: [0.0-1.0]
+
+### 1.3 - Check what port (if running):
+Look in console output for "port XXXX" or "listening on XXXX"
+
+Port number: [XXXX or "NOT FOUND"]
+Certainty: [0.0-1.0]
+
+---
+
+## STEP 2: DATABASE CONNECTIVITY (3 minutes)
+
+### 2.1 - Verify Supabase credentials exist:
+Check .env file or environment variables
+
+SUPABASE_URL present? YES/NO
+SUPABASE_ANON_KEY present? YES/NO
+DO NOT paste actual keys
+Certainty: [0.0-1.0]
+
+### 2.2 - Test database connection:
+Create test file `db-test.js`:
+```javascript
+const { createClient } = require('@supabase/supabase-js');
+const supabase = createClient(
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_ANON_KEY
+);
+
+async function test() {
+  const { data, error } = await supabase
+    .from('tasks')
+    .select('id')
+    .limit(1);
+  
+  console.log('Connection test:', error ? 'FAILED' : 'SUCCESS');
+  console.log('Error:', error);
+  console.log('Data:', data);
+}
+
+test();
+```
+
+Run: `node db-test.js`
+
+COPY/PASTE the output:
+[PASTE OUTPUT]
+
+Connection: SUCCESS/FAILED
+Certainty: [0.0-1.0]
+
+### 2.3 - Check RLS policies:
+If connection succeeded, test read access:
+```javascript
+const { data, error } = await supabase
+  .from('tasks')
+  .select('*');
+console.log('Tasks returned:', data?.length || 0);
+console.log('RLS blocking?', error?.code === 'PGRST301');
+```
+
+COPY/PASTE output:
+[PASTE OUTPUT]
+
+Can read tasks? YES/NO
+Certainty: [0.0-1.0]
+
+---
+
+## STEP 3: ROUTE TESTING (2 minutes)
+
+### 3.1 - Check if /hyperdag route exists:
+Search your codebase for "hyperdag" or "/hyperdag"
+
+Found in file: [filename or "NOT FOUND"]
+
+Code snippet (5 lines around route definition):
+```
+[PASTE CODE or "NOT FOUND"]
+```
+
+Certainty: [0.0-1.0]
+
+### 3.2 - Test route accessibility:
+If server is running, open webview and navigate to: [YOUR_REPLIT_URL]/hyperdag
+
+What appears? [Describe or "404" or "ERROR" or "BLANK"]
+Take screenshot if possible
+Certainty: [0.0-1.0]
+
+---
+
+## STEP 4: ANFIS ROUTING STATUS (2 minutes)
+
+### 4.1 - Check if ANFIS code exists:
+Search codebase for "anfis" or "ANFIS"
+
+Found in file: [filename or "NOT FOUND"]
+Certainty: [0.0-1.0]
+
+### 4.2 - Test ANFIS calculation (if exists):
+Create test with sample data
+Run ANFIS routing on dummy task
+
+COPY/PASTE output with scores:
+[PASTE OUTPUT]
+
+Calculation works? YES/NO
+Certainty: [0.0-1.0]
+
+---
+
+## FINAL REPORT FORMAT:
+
+**HDM DIAGNOSTIC SUMMARY**
+
+**Overall Status:** [RUNNING / PARTIALLY_WORKING / BROKEN / UNKNOWN]
+
+**Certainty Breakdown:**
+- Server Running: belief=[X], disbelief=[Y], uncertainty=[Z]
+- Database Connected: belief=[X], disbelief=[Y], uncertainty=[Z]  
+- Routes Working: belief=[X], disbelief=[Y], uncertainty=[Z]
+- ANFIS Active: belief=[X], disbelief=[Y], uncertainty=[Z]
+
+**VERIFIED WORKING:** [List only items with certainty >0.7]
+**VERIFIED BROKEN:** [List items with disbelief >0.5]
+**UNCERTAIN:** [List items with uncertainty >0.3]
+
+**BLOCKERS IDENTIFIED:**
+1. [Specific blocker with evidence]
+2. [Specific blocker with evidence]
+
+**NEXT RECOMMENDED ACTION:**
+[Single highest-priority fix with certainty score]
+
+**PROOF ATTACHED:**
+- Console outputs: [YES/NO]
+- Error messages: [YES/NO]
+- Test results: [YES/NO]
+
+---
+
+DO NOT REPORT "LIVE" OR "WORKING" WITHOUT PROOF.
+If uncertain, say so with percentage.
+If something is broken, state it clearly with evidence.
+
+BEGIN DIAGNOSTIC NOW.

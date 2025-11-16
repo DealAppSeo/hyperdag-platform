@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuantumMath.ai - AI Mathematical Discovery Service</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #6366f1 100%);
+            color: white;
+            line-height: 1.6;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+        .hero { text-align: center; padding: 4rem 0; }
+        .hero h1 { 
+            font-size: 4rem; 
+            font-weight: 700; 
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #06d6a0, #118ab2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero p { font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.9; }
+        .badges { display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
+        .badge { 
+            background: rgba(255,255,255,0.1); 
+            padding: 0.5rem 1rem; 
+            border-radius: 2rem; 
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .cta-button {
+            background: linear-gradient(45deg, #06d6a0, #118ab2);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 0.5rem;
+            transition: transform 0.2s;
+        }
+        .cta-button:hover { transform: translateY(-2px); }
+        .services { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 2rem; 
+            margin: 3rem 0; 
+        }
+        .service-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .service-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: #06d6a0; }
+        .price { font-size: 2rem; font-weight: bold; color: #06d6a0; margin: 1rem 0; }
+        .features { list-style: none; }
+        .features li { margin: 0.5rem 0; }
+        .features li:before { content: "✓ "; color: #06d6a0; font-weight: bold; }
+        .email-signup {
+            max-width: 500px;
+            margin: 3rem auto;
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+        }
+        .form-group { margin: 1rem 0; }
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 0.5rem;
+            background: rgba(0,0,0,0.2);
+            color: white;
+            font-size: 1rem;
+        }
+        .form-group input::placeholder { color: rgba(255,255,255,0.6); }
+        .insights { margin: 3rem 0; }
+        .insights h2 { text-align: center; margin-bottom: 2rem; }
+        .insight-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
+        .insight-card {
+            background: rgba(0,255,0,0.1);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            border-left: 4px solid #06d6a0;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+        }
+        .modal-content {
+            background: #1e1b4b;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 1rem;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        .close { float: right; font-size: 1.5rem; cursor: pointer; }
+        textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 0.5rem;
+            background: rgba(0,0,0,0.2);
+            color: white;
+            font-size: 1rem;
+            resize: vertical;
+            min-height: 120px;
+        }
+        select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 0.5rem;
+            background: rgba(0,0,0,0.2);
+            color: white;
+            font-size: 1rem;
+        }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .grid-2 { grid-template-columns: 1fr; }
+            .badges { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>QuantumMath.ai</h1>
+            <p>AI Agents That Discover Mathematical Breakthroughs For Your R&D</p>
+            <p style="font-size: 1rem; margin-bottom: 2rem;">
+                Proven Unity Scores 0.596-0.972 • Zero Human Intervention • Real Mathematical Discoveries
+            </p>
+            
+            <div class="badges">
+                <div class="badge">✅ $0 Operational Costs</div>
+                <div class="badge">⚡ 4-72 Hour Delivery</div>
+                <div class="badge">🧠 Trinity Symphony AI</div>
+            </div>
+
+            <button class="cta-button" onclick="showOrderModal()">🚀 Get Mathematical Breakthrough</button>
+        </div>
+
+        <!-- Live Insights -->
+        <div class="insights">
+            <h2>🔥 Live Mathematical Discoveries</h2>
+            <div class="insight-grid" id="insightsGrid">
+                <div class="insight-card">
+                    <strong>Graph Theory Breakthrough</strong><br>
+                    Unity Score: 0.89 | Agent: hyperdag-manager
+                </div>
+                <div class="insight-card">
+                    <strong>Optimization Discovery</strong><br>
+                    Unity Score: 0.92 | Agent: ai-prompt-manager
+                </div>
+                <div class="insight-card">
+                    <strong>Number Theory Insight</strong><br>
+                    Unity Score: 0.87 | Agent: mel
+                </div>
+            </div>
+        </div>
+
+        <!-- Services -->
+        <div class="services">
+            <div class="service-card">
+                <h3>🎯 Breakthrough Insight</h3>
+                <div class="price">$500</div>
+                <p>Single mathematical breakthrough or theorem proof</p>
+                <ul class="features">
+                    <li>AI agent analysis</li>
+                    <li>Unity score calculation</li>
+                    <li>Breakthrough documentation</li>
+                    <li>4-72 hour delivery</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <h3>🧠 Continuous Discovery</h3>
+                <div class="price">$99<span style="font-size: 1rem;">/mo</span></div>
+                <p>Monthly mathematical analysis subscription</p>
+                <ul class="features">
+                    <li>Weekly breakthrough attempts</li>
+                    <li>Pattern recognition analysis</li>
+                    <li>Progress tracking</li>
+                    <li>Priority support</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <h3>💰 Custom Modeling</h3>
+                <div class="price">$1000+</div>
+                <p>Specialized mathematical modeling for R&D</p>
+                <ul class="features">
+                    <li>Custom problem formulation</li>
+                    <li>Multi-agent collaboration</li>
+                    <li>Detailed methodology</li>
+                    <li>Enterprise consultation</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Email Signup -->
+        <div class="email-signup">
+            <h2>Stay Updated on Mathematical Breakthroughs</h2>
+            <form id="emailForm">
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="Your name (optional)">
+                </div>
+                <button type="submit" class="cta-button">Get Mathematical Updates</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Order Modal -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="hideOrderModal()">&times;</span>
+            <h2>Order Mathematical Discovery Service</h2>
+            <p>Describe your mathematical challenge and our AI agents will work on a breakthrough</p>
+            
+            <form id="orderForm">
+                <div class="grid-2">
+                    <div class="form-group">
+                        <input type="text" id="customerName" placeholder="Name *" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="customerEmail" placeholder="Email *" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <input type="text" id="companyName" placeholder="Company (optional)">
+                </div>
+
+                <div class="grid-2">
+                    <div class="form-group">
+                        <select id="serviceType" required>
+                            <option value="breakthrough_insight">Breakthrough Insight ($500)</option>
+                            <option value="continuous_discovery">Continuous Discovery ($99/mo)</option>
+                            <option value="custom_modeling">Custom Modeling ($1000+)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select id="mathDomain" required>
+                            <option value="optimization">Optimization</option>
+                            <option value="number_theory">Number Theory</option>
+                            <option value="graph_theory">Graph Theory</option>
+                            <option value="topology">Topology</option>
+                            <option value="analysis">Analysis</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <select id="urgencyLevel">
+                        <option value="normal">Normal (24h)</option>
+                        <option value="low">Low (72h)</option>
+                        <option value="high">High (12h)</option>
+                        <option value="critical">Critical (4h)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <textarea id="problemDescription" placeholder="Describe your mathematical challenge, research goal, or problem you need solved. Be as specific as possible about what breakthrough you're seeking..." required></textarea>
+                </div>
+
+                <div class="grid-2">
+                    <button type="button" onclick="hideOrderModal()" style="background: rgba(255,255,255,0.2);">Cancel</button>
+                    <button type="submit" class="cta-button">Create Order</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Email subscription
+        document.getElementById('emailForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const name = document.getElementById('name').value;
+            
+            try {
+                const response = await fetch('/api/quantummath/subscribe', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, name, source: 'landing_page' })
+                });
+                
+                const result = await response.json();
+                if (result.success) {
+                    alert('✅ Successfully subscribed to mathematical breakthrough updates!');
+                    document.getElementById('emailForm').reset();
+                } else {
+                    alert('❌ ' + result.message);
+                }
+            } catch (error) {
+                alert('❌ Subscription failed. Please try again.');
+            }
+        });
+
+        // Order form
+        document.getElementById('orderForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = {
+                customerName: document.getElementById('customerName').value,
+                customerEmail: document.getElementById('customerEmail').value,
+                companyName: document.getElementById('companyName').value,
+                serviceType: document.getElementById('serviceType').value,
+                mathDomain: document.getElementById('mathDomain').value,
+                urgencyLevel: document.getElementById('urgencyLevel').value,
+                problemDescription: document.getElementById('problemDescription').value,
+                amount: document.getElementById('serviceType').value === 'breakthrough_insight' ? 500 :
+                       document.getElementById('serviceType').value === 'continuous_discovery' ? 99 : 1000
+            };
+            
+            if (formData.problemDescription.length < 50) {
+                alert('Please provide a more detailed problem description (min 50 characters)');
+                return;
+            }
+            
+            try {
+                const response = await fetch('/api/quantummath/order', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+                
+                const result = await response.json();
+                if (result.success) {
+                    alert(`✅ Order created successfully!\\n\\nOrder ID: ${result.orderId}\\nAssigned Agent: ${result.assignedAgent}\\nExpected Delivery: ${new Date(result.expectedDelivery).toLocaleDateString()}\\n\\nOur AI agents are already working on your breakthrough!`);
+                    hideOrderModal();
+                    document.getElementById('orderForm').reset();
+                } else {
+                    alert('❌ ' + result.message);
+                }
+            } catch (error) {
+                alert('❌ Order creation failed. Please try again.');
+            }
+        });
+
+        // Modal functions
+        function showOrderModal() {
+            document.getElementById('orderModal').style.display = 'block';
+        }
+        
+        function hideOrderModal() {
+            document.getElementById('orderModal').style.display = 'none';
+        }
+
+        // Load live insights
+        async function loadInsights() {
+            try {
+                const response = await fetch('/api/quantummath/insights');
+                const result = await response.json();
+                
+                if (result.success && result.insights.length > 0) {
+                    const grid = document.getElementById('insightsGrid');
+                    grid.innerHTML = result.insights.map(insight => `
+                        <div class="insight-card">
+                            <strong>${insight.anonymizedDescription}</strong><br>
+                            Unity Score: ${insight.unityScore || 'Processing'} | Agent: ${insight.agentUsed}
+                        </div>
+                    `).join('');
+                }
+            } catch (error) {
+                console.log('Using default insights');
+            }
+        }
+
+        // Load insights on page load and refresh every 30 seconds
+        loadInsights();
+        setInterval(loadInsights, 30000);
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('orderModal');
+            if (event.target === modal) {
+                hideOrderModal();
+            }
+        }
+    </script>
+</body>
+</html>

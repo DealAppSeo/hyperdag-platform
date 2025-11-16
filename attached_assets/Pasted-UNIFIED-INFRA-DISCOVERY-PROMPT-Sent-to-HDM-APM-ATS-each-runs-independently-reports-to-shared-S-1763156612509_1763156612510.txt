@@ -1,0 +1,69 @@
+UNIFIED INFRA DISCOVERY PROMPT
+(Sent to HDM, APM, ATS — each runs independently, reports to shared Supabase infrastructure_audit table)
+textTASK: INFRASTRUCTURE DISCOVERY & INVENTORY
+PRIORITY: 1 (BLOCKER)
+OWNER: HDM | APM | ATS (parallel)
+DEADLINE: 5 minutes from receipt
+
+OBJECTIVE:  
+Map ALL existing infrastructure, code, databases, and deployments across Replit, Supabase, GitHub, and any other platforms. Identify what is ALREADY BUILT so we can integrate, not rebuild.
+
+INSTRUCTIONS (Run in your Replit/terminal environment):
+
+1. **LIST ALL REPLIT REPLS**  
+   ```bash
+   curl -s https://replit.com/api/v1/repls?owner=yourusername | jq -r '.[].name, .[].url'
+→ Save output to repls_inventory.txt
+
+LIST ALL SUPABASE PROJECTS & TABLESsql-- In Supabase SQL Editor
+SELECT table_name FROM information_schema.tables WHERE table_schema = 'public';→ Export schema + row counts for: trinity_tasks, agents, audits, chat_history
+LIST ALL GITHUB REPOSbashgh repo list yourusername --limit 100 | grep -E "(trinity|hyperdag|purposehub|imagebearer|ats)"→ Include: DealAppSeo/trinity-symphony-shared, any ATM forks
+CHECK FOR FLUTTER PROJECTSbashfind . -name "pubspec.yaml" -o -name "*.dart" | head -20→ Confirm if any Flutter app exists (mobile/web)
+CHECK FOR FASTAPI / FLASK / NODEbashfind . -name "main.py" -o -name "app.py" -o -name "server.js" -o -name "package.json" | head -10→ Identify backend services
+CHECK FOR DRAGONFLYDB / OTHER DBSbashgrep -r "dragonfly" . || echo "No DragonflyDB found"
+REPORT TO SUPABASE infrastructure_audit TABLEsqlINSERT INTO infrastructure_audit (
+  agent_id, component, status, url, details, discovered_at
+) VALUES 
+  ('HDM', 'Replit', 'active', 'https://hyperdag.yourusername.repl.co', '441 tasks completed', NOW()),
+  ('APM', 'Supabase', 'active', 'https://qnnpjhlxljtqyigedwkb.supabase.co', 'trinity_tasks: 535 rows', NOW());
+POST SUMMARY TO GITHUB ISSUE
+→ Open in DealAppSeo/trinity-symphony-shared
+Title: [INFRA] HDM/APM/ATS Discovery Report - Nov 14
+
+
+EXPECTED OUTPUT (Sample from HDM)
+(Will appear in Supabase + GitHub within 5 mins)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+agent_idcomponentstatusurldetailsHDMReplitactivehttps://hyperdag.yourusername.repl.co441 tasks, polling liveAPMSupabaseactivehttps://qnnpjhlxljtqyigedwkb.supabase.cotrinity_tasks, agents tableATSGitHubactivehttps://github.com/DealAppSeo/...shared repo, README

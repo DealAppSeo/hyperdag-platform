@@ -1,0 +1,705 @@
+~/workspace$ npm run dev
+
+> rest-express@1.0.0 dev
+> NODE_ENV=development tsx server/index.ts
+
+[Decision Engine] ⏰ Scheduled execution timer started
+[Autonomous Decision Engine] 🤖 Initialized with no-downside heuristic
+[Problem Detector] ⚙️  Auto-monitoring DISABLED (reduce server load)
+[Agentic Wrapper] 🤖 Initialized in balanced mode
+[Debate Protocol] 🗣️  Initialized with anti-loop mechanisms
+[Debate Protocol] ⚙️  Max rounds: 5, Duration: 300000ms
+[Auto-Fix Executor] 🔧 Initialized with 4 known fixes
+[Supabase] Client initialized: https://qnnpjhlxljtqyigedwkb.supabase.co
+[ProviderRouter] Initialized with 6 real API providers with exponential backoff
+[ProviderRouter] Using in-memory cache with 24h TTL
+[ProviderRouter] Initialized with 6 real API providers with exponential backoff
+[ProviderRouter] Using in-memory cache with 24h TTL
+[Free-Tier Monitor] 🆓 Zero-cost quota tracking initialized
+[Free-Tier Monitor] 📊 Monitoring 7 free-tier providers
+[Veritas Trinity] 🔬 Initialized with hallucination suppression
+[Veritas Trinity] 📊 Confidence threshold: 95%
+[Veritas Trinity] 🎖️  Honesty premium: 1.5x for abstentions
+[Veritas Autonomous] ✅ Hooked into autonomous decision engine
+[Veritas Autonomous] 🔬 Integrated hallucination suppression with autonomous decisions
+[INFO][[4FA] Four-Factor Authentication service initialized]
+[OAuth] Missing credentials for twitter
+[OAuth] Missing credentials for linkedin
+[OAuth] Missing credentials for youtube
+[OAuth] Missing credentials for medium
+[OAuth] Missing credentials for stackoverflow
+[oauth-service] OAuth service initialized
+[INFO][IOTA service initializing with node URL: https://api.testnet.shimmer.network]
+[INFO][Polygon Service initialized]
+[INFO][Solana Service initialized in placeholder mode]
+[Patent Validation] 📊 Patent validation suite initialized
+[Semantic Cache] Initializing with DragonflyDB LEARNER (DB1)
+[Semantic Cache] Threshold: 0.92
+[Semantic Cache] Expected: 50% cost reduction + 19x speed boost
+[Semantic Cache] 🚀 AGGRESSIVE MODE: Caching everything permanently
+[Semantic Cache] 💡 Storage is cheap (~$0.00001/query), retrieval ~10ms
+[Free Tier Router] 🚀 Initializing cascading free tier system
+[Free Tier Router] 📊 9 free providers across 5 levels
+[Free Tier Router] 💰 Expected: Limited free tier optimization (under development)
+[Free Tier Router] 🔄 Integration with existing ANFIS routing active
+[Free Tier Router] ⏰ Quota reset scheduler started
+[Temporal Arbitrage] 🕐 Initializing time-based cost optimization
+[Temporal Arbitrage] 📊 Tracking pricing patterns for 4 providers
+[Temporal Arbitrage] 💰 Expected: 25-40% cost reduction on flexible queries
+[Temporal Arbitrage] 🔗 Integration with bilateral learning system active
+[Temporal Arbitrage] 🔄 Queue processor started (1min intervals)
+[Temporal Arbitrage] 🧠 Pattern learning started (5min intervals)
+[Ultimate Orchestrator] 🚀 Initializing MAXIMUM efficiency system
+[Ultimate Orchestrator] 📊 Target: 10% measured cost reduction + efficiency improvements
+[Ultimate Orchestrator] 🎯 Strategy stack: Semantic Cache + Free Tier + Temporal + Compression
+[Ultimate Orchestrator] 🚀 Initializing MAXIMUM efficiency system
+[Ultimate Orchestrator] 📊 Target: 10% measured cost reduction + efficiency improvements
+[Ultimate Orchestrator] 🎯 Strategy stack: Semantic Cache + Free Tier + Temporal + Compression
+[Quantum DAGNN] 🚀 Initializing quantum-resistant AI+Web3 convergence system
+[Quantum DAGNN] 🔐 Quantum resistance threshold: 0.85
+[Quantum DAGNN] 🧠 Bilateral learning matrix initialized
+[Quantum DAGNN] 📡 Created node: qr-ai-primary (QR: 0.95)
+[Quantum DAGNN] 📡 Created node: qr-blockchain-ethereum (QR: 0.88)
+[Quantum DAGNN] 📡 Created node: qr-arbitrage-supreme (QR: 0.92)
+[Quantum DAGNN] 📡 Created node: qr-bilateral-nexus (QR: 0.89)
+[Metrics Tracker] 📊 Production metrics collection started
+[Metrics Tracker] 🎯 Target: Validate 89% cost reduction claim
+[HuggingFace] Service initialized with API key
+[HuggingFace] Free tier: ~1K requests/minute, 10K requests/day
+[HuggingFace] Text models: 18
+[HuggingFace] Embedding models: 10
+[HuggingFace] Per-model rate limiting enabled
+[OpenRouter] Service initialized with API key
+[OpenRouter] Daily budget: $5
+[OpenRouter] Unified access to 200+ AI models
+[Prometheus] Metrics service initialized with comprehensive monitoring
+[INFO][[ai-service] Initializing ANFIS-powered AI Service]
+[INFO][[ai-service] OpenAI provider initialized]
+[INFO][[ai-service] Anthropic provider initialized with Helicone.ai monitoring + auth]
+[AI-Prompt-Manager ANFIS] Initialized 6 AI/Web2 providers for prompt optimization
+[AI-Prompt-Manager ANFIS] Cross-platform synchronization initialized
+[AI-Prompt-Manager] Initializing service with ANFIS optimization
+[AI-Prompt-Manager] OpenAI provider initialized for prompt optimization
+[AI-Prompt-Manager] Anthropic provider initialized with Helicone.ai auth
+[DePIN Arbitrage] Gaming/Mining compute arbitrage initialized
+[DePIN Arbitrage] 3 DePIN networks available
+[Cloud Gaming Arbitrage] Initialized gaming service repurposing
+[Cloud Gaming Arbitrage] 5 services available for AI hacking
+[Game Engine Arbitrage] Zero-cost AI simulation system initialized
+[Game Engine Arbitrage] 5 game engines available for AI hacking
+[Streaming Arbitrage] Creative streaming platform hacking initialized
+[Streaming Arbitrage] 5 platforms for AI content arbitrage
+[Educational Arbitrage] Educational compute borrowing initialized
+[Educational Arbitrage] 7 educational platforms for AI training
+[Orchestrator] Initialized 8 autonomous agents with equal priority
+[Orchestrator] ⚙️  Auto-execution DISABLED (reduce server load)
+[Semantic RAG] ⚙️  Auto-initialization DISABLED (reduce server load)
+[ARPO] Agent initialized with PPO architecture
+[MultiModal RAG] System initialized with cross-modal capabilities
+[Constitutional RLAIF] System initialized with ethical principles
+[Advanced Router] Initialized with DAG + ANFIS + Consensus engines
+[Integrated HyperDAG] System initialized with SBT + ZKP + DAO governance
+[Comprehensive AI Arbitrage] 🚀 Multi-category system initialized
+[Comprehensive AI Arbitrage] 📊 27 providers across 8 categories
+[SynapticFlow-Manager] 🧠 Initializing neuromorphic AI Trinity manager
+[SynapticFlow-Manager] 🔗 Initialized 18 synaptic connections
+[AI Trinity Arbitrage Service] 🚀 Commercial service initialized
+[AI Trinity Arbitrage Service] 💰 10% measured cost reduction from production data
+[Agent Marketplace] 🚀 Agent-as-a-Service marketplace initialized
+[Agent Marketplace] 🤖 8 autonomous agents available for subscription
+[Enterprise Pilot] 🚀 "AI that sells AI" pilot program initialized
+[Enterprise Pilot] 🎯 Target: $10K MRR in Month 1, $50K by Month 3
+[Mutual Discovery] 🔍 Initializing user understanding engine...
+[INFO][[GaslessRepID] Service initialized]
+[INFO][[GaslessRepID] Master wallet: 0x40f7982363aBFb8C071d5bB23b16fBA0D05cbb87]
+[Autonomous Free Coding] 🤖💰 Zero-cost autonomous coding enabled
+[Autonomous Free Coding] ✅ Integrated with:
+[Autonomous Free Coding]    - Free-Tier Quota Monitor
+[Autonomous Free Coding]    - Temporal Arbitrage Engine
+[Autonomous Free Coding]    - Autonomous Decision Engine
+[Quantum DAGNN] 🔗 Secure connection: qr-ai-primary → qr-blockchain-ethereum (strength: 0.714)
+[Quantum DAGNN] 🔗 Secure connection: qr-ai-primary → qr-arbitrage-supreme (strength: 0.749)
+[Quantum DAGNN] 🔗 Secure connection: qr-ai-primary → qr-bilateral-nexus (strength: 0.719)
+[Quantum DAGNN] 🔗 Secure connection: qr-blockchain-ethereum → qr-ai-primary (strength: 0.714)
+[Quantum DAGNN] 🔗 Secure connection: qr-arbitrage-supreme → qr-ai-primary (strength: 0.749)
+[Quantum DAGNN] 🔗 Secure connection: qr-arbitrage-supreme → qr-bilateral-nexus (strength: 0.742)
+[Quantum DAGNN] 🔗 Secure connection: qr-bilateral-nexus → qr-ai-primary (strength: 0.719)
+[Quantum DAGNN] 🔗 Secure connection: qr-bilateral-nexus → qr-arbitrage-supreme (strength: 0.742)
+[SynapticFlow-Manager] 🧠 Initialized 15 neuromorphic nodes
+[Quantum DAGNN] 🤝 Bilateral learning matrix initialized for human-AI collaboration
+[Quantum DAGNN] ✅ Quantum-resistant DAGNN system online
+[SynapticFlow-Manager] 🧠 Initialized 3 memory traces
+[SynapticFlow-Manager] 📡 Market signal processing in simulation mode
+[SynapticFlow-Manager] ⚙️  Cross-manager auto-sync DISABLED (reduce server load)
+[SynapticFlow-Manager] 🔄 Adaptive processes started
+[SynapticFlow-Manager] ✅ Neuromorphic Trinity manager initialized
+[SynapticFlow-Manager] 📊 Network: 15 nodes, 18 connections
+[ERROR][IOTA node health check failed:] TypeError: fetch failed
+    at node:internal/deps/undici/undici:13510:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async IOTAService.checkNodeAvailability (/home/runner/workspace/server/services/iota-service.ts:65:24)
+    at async IOTAService.init (/home/runner/workspace/server/services/iota-service.ts:36:22) {
+  [cause]: Error: getaddrinfo ENOTFOUND api.testnet.shimmer.network
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'api.testnet.shimmer.network'
+  }
+}
+[ERROR][IOTA client initialization failed: Failed to connect to node]
+11:15:51 PM [zkp] Initializing ZKP service
+11:15:51 PM [zkp] Created new ZK circuit: Identity
+11:15:51 PM [zkp] Created new ZK circuit: Transaction
+11:15:51 PM [zkp] Created new ZK circuit: Reputation
+11:15:51 PM [zkp] Created new ZK circuit: Governance
+11:15:51 PM [zkp] ZKP service initialized with default circuits
+[FractalTracker] Initialized chaos theory-based pattern analysis
+✅ [Autonomous System] Build-measure-learn methodology with no-downside heuristic registered
+✅ [Trinity Prompt Distribution] Single prompt → all managers with free AI arbitrage registered
+✅ [Trinity Managers] Manager registration and heartbeat API registered
+✅ [Trinity Coordinator] Prompt distribution API registered
+✅ [Trinity Roadmap] Dynamic task prioritization API registered
+✅ [Free-Tier Monitor] Zero-cost autonomous coding tracker registered
+✅ [Veritas Trinity] Confidence-calibrated AI with 95% threshold and honesty premium registered
+IOTA API routes registered successfully
+Wallet Bridge API routes registered successfully
+Health Check API routes registered successfully
+Domain Health API routes registered successfully
+Blockchain Health API routes registered successfully
+Chat API routes registered successfully
+Patent Validation API routes registered successfully
+MotherDuck Analytics API routes registered successfully
+Smart Authentication API routes registered successfully
+ANFIS AI fuzzy logic routing API routes registered successfully
+AI-Prompt-Manager ANFIS optimization API routes registered successfully
+Resource Arbitrage Engine API routes registered successfully
+Autonomous Agents Orchestrator API routes registered successfully
+Cross-Platform Coordination API routes registered successfully
+✅ [Infrastructure Discovery] Autonomous infrastructure audit and reporting API registered
+Consolidated Web3-AI API routes registered successfully
+4FA authentication API routes registered successfully
+Security monitoring API routes registered successfully
+Trinity Symphony Network API routes registered successfully
+Advanced Optimization Suite API routes registered successfully
+Advanced AI Orchestration System API routes registered successfully
+Mobile-optimized API routes imported successfully
+Voice API routes registered successfully
+Early Access API routes registered successfully
+System Status API routes registered successfully
+Advanced DAG + ANFIS Routing API routes registered successfully
+SBT + ZKP + DAO Governance System API routes registered successfully
+RepID Gamification System (Fibonacci-weighted) - Implementation Complete
+Newsletter Signup System API routes registered successfully
+Fractal Pattern Mining (Chaos Theory) API routes registered successfully
+Mutual Information Optimizer (71.7% → 85%+ success rate) API routes registered successfully
+Fractal Network Optimizer (20-50% computation reduction) API routes registered successfully
+Video Generation API routes registered successfully
+Unified Infrastructure API routes registered successfully (Alchemy, Infura, Pinata, Twilio)
+Alchemy Blockchain Infrastructure API routes registered successfully
+✅ [AI Trinity Arbitrage Service] Commercial AI arbitrage with 96.4% proven cost reduction - Ready for enterprise sales
+✅ [Agent Marketplace] Agent-as-a-Service marketplace operational - $500-2000/month per agent
+✅ [Enterprise Pilot] "AI that sells AI" pilot program ready - Target: $10K MRR Month 1
+✅ [Quantum RLAIF Trinity] Phase 1 implementation: ANFIS + RLAIF + Mobile <200ms + Patent-defensible innovations
+Decentralized Infrastructure: 4 compute + 5 storage providers operational
+AI Symphony: 5 AI providers with ANFIS routing - fully autonomous
+✅ [Unified API v1] Enterprise blockchain deployment, ZKP services, and AI orchestration registered
+   📋 Endpoints: /ai/execute, /ai/providers, /ai/usage, /blockchain/deploy, /blockchain/networks, /zkp/prove, /zkp/verify
+✅ [Gasless RepID] Server-side wallet management for RepID credentials - No MetaMask required!
+   📋 Endpoints: POST /api/repid/create, GET /api/repid/:userId, POST /api/repid/verify-proof, PUT /api/repid/update-score
+✅ [Offloaded Files] Documentation and MD files stored in database for deployment size reduction
+   📋 Endpoints: GET /api/offloaded-files, GET /api/offloaded-files/:id, GET /api/offloaded-files/path/*, GET /api/offloaded-files/stats
+🎼 Initializing Trinity Symphony DragonflyDB...
+🎼 Trinity Symphony: Connecting to DragonflyDB Cloud...
+🔗 Connecting to DragonflyDB CONDUCTOR (DB0)...
+📦 Initializing Unified Supabase Client...
+📡 Initializing Trinity Distributed Messaging...
+[Trinity MessageQueue] 🎯 Registered handler for task_assignment
+[Trinity MessageQueue] 🎯 Registered handler for task_result
+[Trinity MessageQueue] 🎯 Registered handler for learning_update
+[Trinity MessageQueue] Supabase not configured - operating in local mode
+[Trinity MessageQueue] Set SUPABASE_URL and SUPABASE_ANON_KEY to enable distributed messaging
+🎼 Initializing Trinity Supabase Coordinator...
+[Trinity Coordinator] ⚠️  Supabase not available - running in local mode
+⚙️  Autonomous Decision System: DISABLED (reduce server load)
+📋 Initializing Trinity Roadmap...
+[Trinity Tasks Seeder] 🌱 Seeding Trinity roadmap tasks...
+🤖💰 Initializing Autonomous Free Coding...
+✅ Autonomous free coding enabled
+   - Free providers available: 7
+   - Can run now: true
+   - Estimated daily savings: $0.00
+🔐 Initializing Zero-Knowledge Proof System...
+11:15:51 PM [zkp] Initializing ZKP service
+11:15:51 PM [zkp] Created new ZK circuit: Identity
+11:15:51 PM [zkp] Created new ZK circuit: Transaction
+11:15:51 PM [zkp] Created new ZK circuit: Reputation
+11:15:51 PM [zkp] Created new ZK circuit: Governance
+11:15:51 PM [zkp] ZKP service initialized with default circuits
+✅ ZKP service active
+   - Identity proofs enabled
+   - Transaction privacy enabled
+   - Reputation verification enabled
+   - Governance voting enabled
+🤖 Initializing Trinity Consumer Loop...
+[HDM Consumer] 🚀 Starting consumer loop...
+[HDM Consumer] 🔥 Running initial check...
+✅ Trinity Consumer active
+   - Autonomous task execution enabled
+   - Processing tasks every 5 minutes
+   - Circuit breaker: 100 tasks/hour
+   - Using Groq free-tier LLM
+[Trinity TaskCoordinator] ✅ Initialized distributed task routing
+✅ Trinity Supabase coordination ready
+[Trinity Distributed API] ✅ Distributed coordination initialized
+✅ Trinity distributed coordination ready
+11:15:51 PM [express] [Trinity WebSocket] Server initialized on path /ws/trinity
+11:15:51 PM [express] [HDM Autonomous] ⏰ Heartbeat scheduled every 20 minutes
+11:15:51 PM [express] [HDM Autonomous] 📊 Status updates scheduled every 5 minutes
+11:15:51 PM [express] [HDM Autonomous] 🔄 Task polling scheduled every 5 minutes
+11:15:51 PM [express] [HDM Autonomous] 🎼 Trinity Symphony coordination ACTIVE
+11:15:51 PM [express] [HDM Autonomous] 🤖 HyperDAGManager now truly autonomous
+11:15:51 PM [express] Server running on port 5000
+11:15:51 PM [express] [Trinity WebSocket] Available at ws://0.0.0.0:5000/ws/trinity
+[Pinata] Authentication test failed: AxiosError: Request failed with status code 401
+    at settle (file:///home/runner/workspace/node_modules/axios/lib/core/settle.js:19:12)
+    at IncomingMessage.handleStreamEnd (file:///home/runner/workspace/node_modules/axios/lib/adapters/http.js:617:11)
+    at IncomingMessage.emit (node:events:536:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (file:///home/runner/workspace/node_modules/axios/lib/core/Axios.js:45:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async PinataService.testAuthentication (/home/runner/workspace/server/services/storage/pinata-service.ts:202:24)
+    at async PinataService.initialize (/home/runner/workspace/server/services/storage/pinata-service.ts:177:31) {
+  code: 'ERR_BAD_REQUEST',
+  config: {
+    transitional: {
+      silentJSONParsing: true,
+      forcedJSONParsing: true,
+      clarifyTimeoutError: false
+    },
+    adapter: [ 'xhr', 'http', 'fetch' ],
+    transformRequest: [ [Function: transformRequest] ],
+    transformResponse: [ [Function: transformResponse] ],
+    timeout: 0,
+    xsrfCookieName: 'XSRF-TOKEN',
+    xsrfHeaderName: 'X-XSRF-TOKEN',
+    maxContentLength: -1,
+    maxBodyLength: -1,
+    env: { FormData: [Function [FormData]], Blob: [class Blob] },
+    validateStatus: [Function: validateStatus],
+    headers: Object [AxiosHeaders] {
+      Accept: 'application/json, text/plain, */*',
+      'Content-Type': undefined,
+      pinata_api_key: 'd599cc20ad04f856db27',
+      pinata_secret_api_key: 'B6976aed5562a42fa110a73bd5e3596fdf99760c979d6eff9f408b235f86c24e',
+      'User-Agent': 'axios/1.12.0',
+      'Accept-Encoding': 'gzip, compress, deflate, br'
+    },
+    method: 'get',
+    url: 'https://api.pinata.cloud/data/testAuthentication',
+    allowAbsoluteUrls: true,
+    data: undefined
+  },
+  request: <ref *1> ClientRequest {
+    _events: [Object: null prototype] {
+      abort: [Function (anonymous)],
+      aborted: [Function (anonymous)],
+      connect: [Function (anonymous)],
+      error: [Function (anonymous)],
+      socket: [Function (anonymous)],
+      timeout: [Function (anonymous)],
+      finish: [Function: requestOnFinish]
+    },
+    _eventsCount: 7,
+    _maxListeners: undefined,
+    outputData: [],
+    outputSize: 0,
+    writable: true,
+    destroyed: true,
+    _last: true,
+    chunkedEncoding: false,
+    shouldKeepAlive: true,
+    maxRequestsOnConnectionReached: false,
+    _defaultKeepAlive: true,
+    useChunkedEncodingByDefault: false,
+    sendDate: false,
+    _removedConnection: false,
+    _removedContLen: false,
+    _removedTE: false,
+    strictContentLength: false,
+    _contentLength: 0,
+    _hasBody: true,
+    _trailer: '',
+    finished: true,
+    _headerSent: true,
+    _closed: true,
+    socket: TLSSocket {
+      _tlsOptions: [Object],
+      _secureEstablished: true,
+      _securePending: false,
+      _newSessionPending: false,
+      _controlReleased: true,
+      secureConnecting: false,
+      _SNICallback: null,
+      servername: 'api.pinata.cloud',
+      alpnProtocol: false,
+      authorized: true,
+      authorizationError: null,
+      encrypted: true,
+      _events: [Object: null prototype],
+      _eventsCount: 9,
+      connecting: false,
+      _hadError: false,
+      _parent: null,
+      _host: 'api.pinata.cloud',
+      _closeAfterHandlingError: false,
+      _readableState: [ReadableState],
+      _writableState: [WritableState],
+      allowHalfOpen: false,
+      _maxListeners: undefined,
+      _sockname: null,
+      _pendingData: null,
+      _pendingEncoding: '',
+      server: undefined,
+      _server: null,
+      ssl: [TLSWrap],
+      _requestCert: true,
+      _rejectUnauthorized: true,
+      timeout: 5000,
+      parser: null,
+      _httpMessage: null,
+      autoSelectFamilyAttemptedAddresses: [Array],
+      [Symbol(alpncallback)]: null,
+      [Symbol(res)]: [TLSWrap],
+      [Symbol(verified)]: true,
+      [Symbol(pendingSession)]: null,
+      [Symbol(async_id_symbol)]: -1,
+      [Symbol(kHandle)]: [TLSWrap],
+      [Symbol(lastWriteQueueSize)]: 0,
+      [Symbol(timeout)]: Timeout {
+        _idleTimeout: 5000,
+        _idlePrev: [TimersList],
+        _idleNext: [Timeout],
+        _idleStart: 9769,
+        _onTimeout: [Function: bound ],
+        _timerArgs: undefined,
+        _repeat: null,
+        _destroyed: false,
+        [Symbol(refed)]: false,
+        [Symbol(kHasPrimitive)]: false,
+        [Symbol(asyncId)]: 28199,
+        [Symbol(triggerId)]: 28197
+      },
+      [Symbol(kBuffer)]: null,
+      [Symbol(kBufferCb)]: null,
+      [Symbol(kBufferGen)]: null,
+      [Symbol(shapeMode)]: true,
+      [Symbol(kCapture)]: false,
+      [Symbol(kSetNoDelay)]: false,
+      [Symbol(kSetKeepAlive)]: true,
+      [Symbol(kSetKeepAliveInitialDelay)]: 1,
+      [Symbol(kBytesRead)]: 0,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(connect-options)]: [Object]
+    },
+    _header: 'GET /data/testAuthentication HTTP/1.1\r\n' +
+      'Accept: application/json, text/plain, */*\r\n' +
+      'pinata_api_key: d599cc20ad04f856db27\r\n' +
+      'pinata_secret_api_key: B6976aed5562a42fa110a73bd5e3596fdf99760c979d6eff9f408b235f86c24e\r\n' +
+      'User-Agent: axios/1.12.0\r\n' +
+      'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+      'Host: api.pinata.cloud\r\n' +
+      'Connection: keep-alive\r\n' +
+      '\r\n',
+    _keepAliveTimeout: 0,
+    _onPendingData: [Function: nop],
+    agent: Agent {
+      _events: [Object: null prototype],
+      _eventsCount: 2,
+      _maxListeners: undefined,
+      defaultPort: 443,
+      protocol: 'https:',
+      options: [Object: null prototype],
+      requests: [Object: null prototype] {},
+      sockets: [Object: null prototype],
+      freeSockets: [Object: null prototype],
+      keepAliveMsecs: 1000,
+      keepAlive: true,
+      maxSockets: Infinity,
+      maxFreeSockets: 256,
+      scheduling: 'lifo',
+      maxTotalSockets: Infinity,
+      totalSocketCount: 3,
+      maxCachedSessions: 100,
+      _sessionCache: [Object],
+      [Symbol(shapeMode)]: false,
+      [Symbol(kCapture)]: false
+    },
+    socketPath: undefined,
+    method: 'GET',
+    maxHeaderSize: undefined,
+    insecureHTTPParser: undefined,
+    joinDuplicateHeaders: undefined,
+    path: '/data/testAuthentication',
+    _ended: true,
+    res: IncomingMessage {
+      _events: [Object],
+      _readableState: [ReadableState],
+      _maxListeners: undefined,
+      socket: null,
+      httpVersionMajor: 1,
+      httpVersionMinor: 1,
+      httpVersion: '1.1',
+      complete: true,
+      rawHeaders: [Array],
+      rawTrailers: [],
+      joinDuplicateHeaders: undefined,
+      aborted: false,
+      upgrade: false,
+      url: '',
+      method: null,
+      statusCode: 401,
+      statusMessage: 'Unauthorized',
+      client: [TLSSocket],
+      _consuming: false,
+      _dumped: false,
+      req: [Circular *1],
+      _eventsCount: 4,
+      responseUrl: 'https://api.pinata.cloud/data/testAuthentication',
+      redirects: [],
+      [Symbol(shapeMode)]: true,
+      [Symbol(kCapture)]: false,
+      [Symbol(kHeaders)]: [Object],
+      [Symbol(kHeadersCount)]: 26,
+      [Symbol(kTrailers)]: null,
+      [Symbol(kTrailersCount)]: 0
+    },
+    aborted: false,
+    timeoutCb: null,
+    upgradeOrConnect: false,
+    parser: null,
+    maxHeadersCount: null,
+    reusedSocket: false,
+    host: 'api.pinata.cloud',
+    protocol: 'https:',
+    _redirectable: Writable {
+      _events: [Object],
+      _writableState: [WritableState],
+      _maxListeners: undefined,
+      _options: [Object],
+      _ended: true,
+      _ending: true,
+      _redirectCount: 0,
+      _redirects: [],
+      _requestBodyLength: 0,
+      _requestBodyBuffers: [],
+      _eventsCount: 3,
+      _onNativeResponse: [Function (anonymous)],
+      _currentRequest: [Circular *1],
+      _currentUrl: 'https://api.pinata.cloud/data/testAuthentication',
+      [Symbol(shapeMode)]: true,
+      [Symbol(kCapture)]: false
+    },
+    [Symbol(shapeMode)]: false,
+    [Symbol(kCapture)]: false,
+    [Symbol(kBytesWritten)]: 0,
+    [Symbol(kNeedDrain)]: false,
+    [Symbol(corked)]: 0,
+    [Symbol(kOutHeaders)]: [Object: null prototype] {
+      accept: [Array],
+      pinata_api_key: [Array],
+      pinata_secret_api_key: [Array],
+      'user-agent': [Array],
+      'accept-encoding': [Array],
+      host: [Array]
+    },
+    [Symbol(errored)]: null,
+    [Symbol(kHighWaterMark)]: 16384,
+    [Symbol(kRejectNonStandardBodyWrites)]: false,
+    [Symbol(kUniqueHeaders)]: null
+  },
+  response: {
+    status: 401,
+    statusText: 'Unauthorized',
+    headers: Object [AxiosHeaders] {
+      date: 'Sat, 15 Nov 2025 23:15:51 GMT',
+      'content-type': 'application/json; charset=utf-8',
+      'content-length': '143',
+      connection: 'keep-alive',
+      'x-powered-by': 'Express',
+      vary: 'Origin',
+      'access-control-allow-credentials': 'true',
+      'x-ratelimit-limit': '180',
+      'x-ratelimit-remaining': '179',
+      'x-ratelimit-reset': '1763248612',
+      etag: 'W/"8f-A/Xfx2sTQfvUWIQPTWvtgoV2OWg"',
+      'strict-transport-security': 'max-age=15724800; includeSubDomains',
+      'x-request-id': '6572f3f0332f408e709bf3683b3887af'
+    },
+    config: {
+      transitional: [Object],
+      adapter: [Array],
+      transformRequest: [Array],
+      transformResponse: [Array],
+      timeout: 0,
+      xsrfCookieName: 'XSRF-TOKEN',
+      xsrfHeaderName: 'X-XSRF-TOKEN',
+      maxContentLength: -1,
+      maxBodyLength: -1,
+      env: [Object],
+      validateStatus: [Function: validateStatus],
+      headers: [Object [AxiosHeaders]],
+      method: 'get',
+      url: 'https://api.pinata.cloud/data/testAuthentication',
+      allowAbsoluteUrls: true,
+      data: undefined
+    },
+    request: <ref *1> ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: true,
+      _last: true,
+      chunkedEncoding: false,
+      shouldKeepAlive: true,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: false,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      strictContentLength: false,
+      _contentLength: 0,
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      _closed: true,
+      socket: [TLSSocket],
+      _header: 'GET /data/testAuthentication HTTP/1.1\r\n' +
+        'Accept: application/json, text/plain, */*\r\n' +
+        'pinata_api_key: d599cc20ad04f856db27\r\n' +
+        'pinata_secret_api_key: B6976aed5562a42fa110a73bd5e3596fdf99760c979d6eff9f408b235f86c24e\r\n' +
+        'User-Agent: axios/1.12.0\r\n' +
+        'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+        'Host: api.pinata.cloud\r\n' +
+        'Connection: keep-alive\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'GET',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      joinDuplicateHeaders: undefined,
+      path: '/data/testAuthentication',
+      _ended: true,
+      res: [IncomingMessage],
+      aborted: false,
+      timeoutCb: null,
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'api.pinata.cloud',
+      protocol: 'https:',
+      _redirectable: [Writable],
+      [Symbol(shapeMode)]: false,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype],
+      [Symbol(errored)]: null,
+      [Symbol(kHighWaterMark)]: 16384,
+      [Symbol(kRejectNonStandardBodyWrites)]: false,
+      [Symbol(kUniqueHeaders)]: null
+    },
+    data: { error: [Object] }
+  },
+  status: 401
+}
+[Pinata] Authentication failed - invalid API credentials
+✅ DragonflyDB CONDUCTOR connected successfully
+[DeepSeek] Service initialized successfully
+[DeepSeek] Available models: 2
+[INFO][[ai-service] DeepSeek AI Symphony provider initialized]
+[INFO][MyNinja] MY-deFuzzyAI-Ninja service initialized
+[INFO][MyNinja] Available models: research, turbo, apex, reasoning
+[INFO][[ai-service] MY-deFuzzyAI-Ninja provider initialized as second choice]
+[asi1-service] Initializing ASi1.ai client with API key
+[asi1-service] ASi1.ai service initialized successfully
+[INFO][[ai-service] ASI1 Advanced Intelligence provider initialized]
+[HuggingFace] Service initialized with API key
+[HuggingFace] Free tier: ~1K requests/minute, 10K requests/day
+[HuggingFace] Text models: 18
+[HuggingFace] Embedding models: 10
+[HuggingFace] Per-model rate limiting enabled
+[INFO][[ai-service] HuggingFace Transformers provider initialized (60-90% cost savings)]
+[INFO][[ai-service] ANFIS fuzzy logic routing system active]
+[Unified Supabase] ✅ Initialized successfully
+[Unified Supabase] 📋 Services enabled:
+[Unified Supabase]    - Vector storage (Semantic RAG)
+[Unified Supabase]    - Real-time messaging (Trinity Symphony)
+[Unified Supabase]    - SBT credentials management
+[Unified Supabase]    - Cross-deployment coordination
+✅ Unified Supabase client ready
+[Trinity Tasks Seeder] ✅ Tasks already seeded, skipping
+✅ Trinity roadmap ready at /trinity-roadmap
+[DeepSeek] Service initialized successfully
+[DeepSeek] Available models: 2
+[AI-Prompt-Manager] DeepSeek provider initialized for cost-effective AI
+[INFO][MyNinja] MY-deFuzzyAI-Ninja service initialized
+[INFO][MyNinja] Available models: research, turbo, apex, reasoning
+[AI-Prompt-Manager] MyNinja provider initialized for specialized tasks
+[HuggingFace] Service initialized with API key
+[HuggingFace] Free tier: ~1K requests/minute, 10K requests/day
+[HuggingFace] Text models: 18
+[HuggingFace] Embedding models: 10
+[HuggingFace] Per-model rate limiting enabled
+[AI-Prompt-Manager] HuggingFace provider initialized for cost-effective solutions
+[AI-Prompt-Manager] Service initialized with ANFIS fuzzy logic optimization
+✅ DragonflyDB CONDUCTOR (DB0): PRODUCTION CONNECTED
+   📋 Purpose: AI-Prompt-Manager cache
+🔗 Connecting to DragonflyDB LEARNER (DB1)...
+[OpenRouter] Loaded 342 models
+✅ DragonflyDB LEARNER connected successfully
+✅ DragonflyDB LEARNER (DB1): PRODUCTION CONNECTED
+   📋 Purpose: Pattern discovery cache
+🔗 Connecting to DragonflyDB VALIDATOR (DB2)...
+[email-service] Mailgun is configured and available
+[email-service] Using domain: sandboxc2b9a8181a474513839cd2dd976c1d51.mailgun.org
+✅ DragonflyDB VALIDATOR connected successfully
+[INFO][[redundant-auth] Service initialized with status: available]
+[INFO][[redundant-auth] Auth methods available: password=true, web3=true, email=true, telegram=true, 2FA=true, wallet=false]
+✅ DragonflyDB VALIDATOR (DB2): PRODUCTION CONNECTED
+   📋 Purpose: HyperDAGManager cache
+🔗 Connecting to DragonflyDB FALLBACK (DB3)...
+[email-service] ✅ Domain verified: sandboxc2b9a8181a474513839cd2dd976c1d51.mailgun.org
+[email-service] ✅ State: active
+✅ DragonflyDB FALLBACK connected successfully
+✅ DragonflyDB FALLBACK (DB3): PRODUCTION CONNECTED
+   📋 Purpose: Emergency backup cache
+🚀 Trinity Symphony PRODUCTION: 4/4 databases connected
+🎯 Enterprise-grade caching ACTIVE with DragonflyDB Cloud
+✅ Trinity Symphony DragonflyDB cache ready
+[Storage] ⚠️  projects table is a placeholder schema - demo project seeding skipped
+[Storage] ⚠️  grantSources table not defined in schema - seeding skipped. Add table to shared/schema.ts
+[Trinity Managers] ✅ 4 manager(s) already configured
+[HDM Consumer] ⏰ Initial check timer fired!
+[HDM Consumer] 📡 Fetching pending tasks from LOCAL DATABASE (PostgreSQL)...
+[HDM Consumer] ✨ No tasks with status=not_started found in initial check
+[telegram-service] Telegram service initialized successfully
+[HDM Heartbeat] ✅ Logged to autonomous_logs
+[HDM Status] ✅ Updated agent_status
+[HDM Tasks] 📋 Found 4 pending task(s):
+   - [Priority 3] No prompt provided...
+   - [Priority 1] Stop current work. Read TRINITY_SYSTEM_ALIGNMENT.md immediat...
+   - [Priority 1] Read TRINITY_SYSTEM_ALIGNMENT.md from GitHub (dealappseo/tri...
+   - [Priority 1] No prompt provided...

@@ -1,0 +1,13 @@
+{
+  "domains": [
+    {
+      "domain": "hyperdag.org",
+      "type": "primary"
+    },
+    {
+      "domain": "www.hyperdag.org",
+      "type": "www"
+    }
+  ],
+  "https": true
+}

@@ -1,0 +1,417 @@
+2025-11-10T02:20:31Z info: Deployment: 441054ed-7612-421b-8ccf-b41d737016db
+2025-11-10T02:20:31Z info: Build: dd595714-b0e9-47b9-bdf4-919b3d603992
+2025-11-10T02:20:31Z info: Connecting to builder
+2025-11-10T02:20:31Z info: Builder connected
+2025-11-10T02:20:33Z info: Installing packages
+--> npm install
+
+--> npm install
+
+npm warn ERESOLVE overriding peer dependency
+
+npm warn ERESOLVE overriding peer dependency
+
+npm warn While resolving: react-i18next@13.5.0
+npm warn Found: i18next@22.5.1
+npm warn node_modules/i18next
+npm warn   i18next@"22.5.1" from @metamask/sdk@0.20.3
+npm warn   node_modules/@alchemy/aa-alchemy/node_modules/@metamask/sdk
+npm warn     @metamask/sdk@"0.20.3" from @wagmi/connectors@4.3.10
+npm warn     node_modules/@alchemy/aa-alchemy/node_modules/@wagmi/connectors
+npm warn   1 more (@metamask/sdk-install-modal-web)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer i18next@">= 23.2.3" from react-i18next@13.5.0
+npm warn node_modules/react-i18next
+npm warn   peer react-i18next@"^13.2.2" from @metamask/sdk-install-modal-web@0.20.2
+npm warn   node_modules/@alchemy/aa-alchemy/node_modules/@metamask/sdk-install-modal-web
+npm warn
+npm warn Conflicting peer dependency: i18next@25.6.1
+npm warn node_modules/i18next
+npm warn   peer i18next@">= 23.2.3" from react-i18next@13.5.0
+npm warn   node_modules/react-i18next
+npm warn     peer react-i18next@"^13.2.2" from @metamask/sdk-install-modal-web@0.20.2
+npm warn     node_modules/@alchemy/aa-alchemy/node_modules/@metamask/sdk-install-modal-web
+
+npm warn While resolving: react-i18next@13.5.0
+npm warn Found: i18next@22.5.1
+npm warn node_modules/i18next
+npm warn   i18next@"22.5.1" from @metamask/sdk@0.20.3
+npm warn   node_modules/@alchemy/aa-alchemy/node_modules/@metamask/sdk
+npm warn     @metamask/sdk@"0.20.3" from @wagmi/connectors@4.3.10
+npm warn     node_modules/@alchemy/aa-alchemy/node_modules/@wagmi/connectors
+npm warn   1 more (@metamask/sdk-install-modal-web)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer i18next@">= 23.2.3" from react-i18next@13.5.0
+npm warn node_modules/react-i18next
+npm warn   peer react-i18next@"^13.2.2" from @metamask/sdk-install-modal-web@0.20.2
+npm warn   node_modules/@alchemy/aa-alchemy/node_modules/@metamask/sdk-install-modal-web
+npm warn
+npm warn Conflicting peer dependency: i18next@25.6.1
+npm warn node_modules/i18next
+npm warn   peer i18next@">= 23.2.3" from react-i18next@13.5.0
+npm warn   node_modules/react-i18next
+npm warn     peer react-i18next@"^13.2.2" from @metamask/sdk-install-modal-web@0.20.2
+npm warn     node_modules/@alchemy/aa-alchemy/node_modules/@metamask/sdk-install-modal-web
+
+npm warn ERESOLVE overriding peer dependency
+
+npm warn ERESOLVE overriding peer dependency
+
+npm warn While resolving: @metamask/sdk-communication-layer@0.20.2
+npm warn Found: cross-fetch@4.1.0
+npm warn node_modules/cross-fetch
+npm warn   cross-fetch@"^4.0.0" from @metamask/sdk@0.20.3
+npm warn   node_modules/@alchemy/aa-alchemy/node_modules/@metamask/sdk
+npm warn     @metamask/sdk@"0.20.3" from @wagmi/connectors@4.3.10
+npm warn     node_modules/@alchemy/aa-alchemy/node_modules/@wagmi/connectors
+npm warn   7 more (@metamask/sdk, @metamask/sdk-communication-layer, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer cross-fetch@"^3.1.5" from @metamask/sdk-communication-layer@0.20.2
+npm warn node_modules/@alchemy/aa-alchemy/node_modules/@metamask/sdk-communication-layer
+npm warn   @metamask/sdk-communication-layer@"0.20.2" from @metamask/sdk@0.20.3
+npm warn   node_modules/@alchemy/aa-alchemy/node_modules/@metamask/sdk
+npm warn
+npm warn Conflicting peer dependency: cross-fetch@3.2.0
+npm warn node_modules/cross-fetch
+npm warn   peer cross-fetch@"^3.1.5" from @metamask/sdk-communication-layer@0.20.2
+npm warn   node_modules/@alchemy/aa-alchemy/node_modules/@metamask/sdk-communication-layer
+npm warn     @metamask/sdk-communication-layer@"0.20.2" from @metamask/sdk@0.20.3
+npm warn     node_modules/@alchemy/aa-alchemy/node_modules/@metamask/sdk
+
+npm warn While resolving: @metamask/sdk-communication-layer@0.20.2
+npm warn Found: cross-fetch@4.1.0
+npm warn node_modules/cross-fetch
+npm warn   cross-fetch@"^4.0.0" from @metamask/sdk@0.20.3
+npm warn   node_modules/@alchemy/aa-alchemy/node_modules/@metamask/sdk
+npm warn     @metamask/sdk@"0.20.3" from @wagmi/connectors@4.3.10
+npm warn     node_modules/@alchemy/aa-alchemy/node_modules/@wagmi/connectors
+npm warn   7 more (@metamask/sdk, @metamask/sdk-communication-layer, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer cross-fetch@"^3.1.5" from @metamask/sdk-communication-layer@0.20.2
+npm warn node_modules/@alchemy/aa-alchemy/node_modules/@metamask/sdk-communication-layer
+npm warn   @metamask/sdk-communication-layer@"0.20.2" from @metamask/sdk@0.20.3
+npm warn   node_modules/@alchemy/aa-alchemy/node_modules/@metamask/sdk
+npm warn
+npm warn Conflicting peer dependency: cross-fetch@3.2.0
+npm warn node_modules/cross-fetch
+npm warn   peer cross-fetch@"^3.1.5" from @metamask/sdk-communication-layer@0.20.2
+npm warn   node_modules/@alchemy/aa-alchemy/node_modules/@metamask/sdk-communication-layer
+npm warn     @metamask/sdk-communication-layer@"0.20.2" from @metamask/sdk@0.20.3
+npm warn     node_modules/@alchemy/aa-alchemy/node_modules/@metamask/sdk
+
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: react-native@0.80.0
+npm warn Found: react@18.3.1
+npm warn node_modules/react
+npm warn   react@"^18.3.1" from the root project
+npm warn   101 more (@alchemy/aa-alchemy, @metamask/sdk, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer react@"^19.1.0" from react-native@0.80.0
+npm warn node_modules/@alchemy/aa-alchemy/node_modules/react-native
+npm warn   peerOptional react-native@"*" from @metamask/sdk-install-modal-web@0.20.2
+npm warn   node_modules/@alchemy/aa-alchemy/node_modules/@metamask/sdk-install-modal-web
+npm warn   2 more (react-native-webview, @react-native/virtualized-lists)
+npm warn
+npm warn Conflicting peer dependency: react@19.2.0
+npm warn node_modules/react
+npm warn   peer react@"^19.1.0" from react-native@0.80.0
+npm warn   node_modules/@alchemy/aa-alchemy/node_modules/react-native
+npm warn     peerOptional react-native@"*" from @metamask/sdk-install-modal-web@0.20.2
+npm warn     node_modules/@alchemy/aa-alchemy/node_modules/@metamask/sdk-install-modal-web
+npm warn     2 more (react-native-webview, @react-native/virtualized-lists)
+
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: react-native@0.80.0
+npm warn Found: react@18.3.1
+npm warn node_modules/react
+npm warn   react@"^18.3.1" from the root project
+npm warn   101 more (@alchemy/aa-alchemy, @metamask/sdk, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer react@"^19.1.0" from react-native@0.80.0
+npm warn node_modules/@alchemy/aa-alchemy/node_modules/react-native
+npm warn   peerOptional react-native@"*" from @metamask/sdk-install-modal-web@0.20.2
+npm warn   node_modules/@alchemy/aa-alchemy/node_modules/@metamask/sdk-install-modal-web
+npm warn   2 more (react-native-webview, @react-native/virtualized-lists)
+npm warn
+npm warn Conflicting peer dependency: react@19.2.0
+npm warn node_modules/react
+npm warn   peer react@"^19.1.0" from react-native@0.80.0
+npm warn   node_modules/@alchemy/aa-alchemy/node_modules/react-native
+npm warn     peerOptional react-native@"*" from @metamask/sdk-install-modal-web@0.20.2
+npm warn     node_modules/@alchemy/aa-alchemy/node_modules/@metamask/sdk-install-modal-web
+npm warn     2 more (react-native-webview, @react-native/virtualized-lists)
+
+npm warn ERESOLVE overriding peer dependency
+
+npm warn ERESOLVE overriding peer dependency
+
+npm warn While resolving: @langchain/community@0.3.50
+npm warn Found: @qdrant/js-client-rest@1.14.1
+npm warn node_modules/@qdrant/js-client-rest
+npm warn   @qdrant/js-client-rest@"^1.9.0" from @langchain/qdrant@0.1.2
+npm warn   node_modules/@langchain/qdrant
+npm warn     @langchain/qdrant@"0.1.2" from @n8n/n8n-nodes-langchain@1.116.2
+npm warn     node_modules/@n8n/n8n-nodes-langchain
+npm warn   1 more (@n8n/n8n-nodes-langchain)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peerOptional @qdrant/js-client-rest@"^1.15.0" from @langchain/community@0.3.50
+npm warn node_modules/@n8n/n8n-nodes-langchain/node_modules/@langchain/community
+npm warn   @langchain/community@"0.3.50" from @n8n/n8n-nodes-langchain@1.116.2
+npm warn   node_modules/@n8n/n8n-nodes-langchain
+npm warn
+npm warn Conflicting peer dependency: @qdrant/js-client-rest@1.15.1
+npm warn node_modules/@qdrant/js-client-rest
+npm warn   peerOptional @qdrant/js-client-rest@"^1.15.0" from @langchain/community@0.3.50
+npm warn   node_modules/@n8n/n8n-nodes-langchain/node_modules/@langchain/community
+npm warn     @langchain/community@"0.3.50" from @n8n/n8n-nodes-langchain@1.116.2
+npm warn     node_modules/@n8n/n8n-nodes-langchain
+
+npm warn While resolving: @langchain/community@0.3.50
+npm warn Found: @qdrant/js-client-rest@1.14.1
+npm warn node_modules/@qdrant/js-client-rest
+npm warn   @qdrant/js-client-rest@"^1.9.0" from @langchain/qdrant@0.1.2
+npm warn   node_modules/@langchain/qdrant
+npm warn     @langchain/qdrant@"0.1.2" from @n8n/n8n-nodes-langchain@1.116.2
+npm warn     node_modules/@n8n/n8n-nodes-langchain
+npm warn   1 more (@n8n/n8n-nodes-langchain)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peerOptional @qdrant/js-client-rest@"^1.15.0" from @langchain/community@0.3.50
+npm warn node_modules/@n8n/n8n-nodes-langchain/node_modules/@langchain/community
+npm warn   @langchain/community@"0.3.50" from @n8n/n8n-nodes-langchain@1.116.2
+npm warn   node_modules/@n8n/n8n-nodes-langchain
+npm warn
+npm warn Conflicting peer dependency: @qdrant/js-client-rest@1.15.1
+npm warn node_modules/@qdrant/js-client-rest
+npm warn   peerOptional @qdrant/js-client-rest@"^1.15.0" from @langchain/community@0.3.50
+npm warn   node_modules/@n8n/n8n-nodes-langchain/node_modules/@langchain/community
+npm warn     @langchain/community@"0.3.50" from @n8n/n8n-nodes-langchain@1.116.2
+npm warn     node_modules/@n8n/n8n-nodes-langchain
+
+npm warn ERESOLVE overriding peer dependency
+
+npm warn ERESOLVE overriding peer dependency
+
+npm warn While resolving: @langchain/community@0.3.50
+npm warn Found: mongodb@6.11.0
+npm warn node_modules/mongodb
+npm warn   mongodb@"6.11.0" from @n8n/n8n-nodes-langchain@1.116.2
+npm warn   node_modules/@n8n/n8n-nodes-langchain
+npm warn     @n8n/n8n-nodes-langchain@"1.116.2" from n8n@1.117.3
+npm warn     node_modules/n8n
+npm warn   1 more (n8n-nodes-base)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peerOptional mongodb@"^6.17.0" from @langchain/community@0.3.50
+npm warn node_modules/@n8n/n8n-nodes-langchain/node_modules/@langchain/community
+npm warn   @langchain/community@"0.3.50" from @n8n/n8n-nodes-langchain@1.116.2
+npm warn   node_modules/@n8n/n8n-nodes-langchain
+npm warn
+npm warn Conflicting peer dependency: mongodb@6.20.0
+npm warn node_modules/mongodb
+npm warn   peerOptional mongodb@"^6.17.0" from @langchain/community@0.3.50
+npm warn   node_modules/@n8n/n8n-nodes-langchain/node_modules/@langchain/community
+npm warn     @langchain/community@"0.3.50" from @n8n/n8n-nodes-langchain@1.116.2
+npm warn     node_modules/@n8n/n8n-nodes-langchain
+
+npm warn While resolving: @langchain/community@0.3.50
+npm warn Found: mongodb@6.11.0
+npm warn node_modules/mongodb
+npm warn   mongodb@"6.11.0" from @n8n/n8n-nodes-langchain@1.116.2
+npm warn   node_modules/@n8n/n8n-nodes-langchain
+npm warn     @n8n/n8n-nodes-langchain@"1.116.2" from n8n@1.117.3
+npm warn     node_modules/n8n
+npm warn   1 more (n8n-nodes-base)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peerOptional mongodb@"^6.17.0" from @langchain/community@0.3.50
+npm warn node_modules/@n8n/n8n-nodes-langchain/node_modules/@langchain/community
+npm warn   @langchain/community@"0.3.50" from @n8n/n8n-nodes-langchain@1.116.2
+npm warn   node_modules/@n8n/n8n-nodes-langchain
+npm warn
+npm warn Conflicting peer dependency: mongodb@6.20.0
+npm warn node_modules/mongodb
+npm warn   peerOptional mongodb@"^6.17.0" from @langchain/community@0.3.50
+npm warn   node_modules/@n8n/n8n-nodes-langchain/node_modules/@langchain/community
+npm warn     @langchain/community@"0.3.50" from @n8n/n8n-nodes-langchain@1.116.2
+npm warn     node_modules/@n8n/n8n-nodes-langchain
+
+
+up to date, audited 6145 packages in 55s
+
+548 packages are looking for funding
+  run `npm fund` for details
+
+
+up to date, audited 6145 packages in 55s
+
+548 packages are looking for funding
+  run `npm fund` for details
+
+
+157 vulnerabilities (43 low, 33 moderate, 58 high, 23 critical)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues possible (including breaking changes), run:
+  npm audit fix --force
+
+Some issues need review, and may require choosing
+a different dependency.
+
+Run `npm audit` for details.
+
+
+157 vulnerabilities (43 low, 33 moderate, 58 high, 23 critical)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues possible (including breaking changes), run:
+  npm audit fix --force
+
+Some issues need review, and may require choosing
+a different dependency.
+
+Run `npm audit` for details.
+
+npm notice
+npm notice New major version of npm available! 10.8.2 -> 11.6.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.6.2
+npm notice To update run: npm install -g npm@11.6.2
+npm notice
+
+npm notice
+npm notice New major version of npm available! 10.8.2 -> 11.6.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.6.2
+npm notice To update run: npm install -g npm@11.6.2
+npm notice
+
+2025-11-10T02:21:30Z info: Starting Build
+
+> rest-express@1.0.0 build
+> vite build --mode production --minify esbuild
+
+
+vite v5.4.14 building for production...
+
+transforming...
+
+Browserslist: browsers data (caniuse-lite) is 6 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+
+✓ 2265 modules transformed.
+
+rendering chunks...
+
+computing gzip size...
+
+../dist/public/index.html                                  4.45 kB │ gzip:  1.67 kB
+
+../dist/public/assets/index-CYVho2WS.css                 191.42 kB │ gzip: 27.38 kB
+../dist/public/assets/index-C5VtFIbl.js                    0.14 kB │ gzip:  0.14 kB
+
+../dist/public/assets/skeleton-byqBdB0d.js                 0.17 kB │ gzip:  0.16 kB
+
+../dist/public/assets/index-CQ4f5JCU.js                    0.23 kB │ gzip:  0.21 kB
+../dist/public/assets/check-BY9idVPn.js                    0.29 kB │ gzip:  0.24 kB
+
+../dist/public/assets/loader-circle-DFIY1zGw.js            0.31 kB │ gzip:  0.26 kB
+
+../dist/public/assets/arrow-right-CmnO73Jl.js              0.33 kB │ gzip:  0.27 kB
+
+../dist/public/assets/circle-check-B07rhIcp.js             0.34 kB │ gzip:  0.27 kB
+
+../dist/public/assets/clock-BewNUWjq.js                    0.35 kB │ gzip:  0.27 kB
+../dist/public/assets/circle-check-big-L_2lESJ8.js         0.36 kB │ gzip:  0.28 kB
+
+../dist/public/assets/circle-x-DxxW1RDM.js                 0.37 kB │ gzip:  0.28 kB
+
+../dist/public/assets/trending-up-CD5WaIuG.js              0.37 kB │ gzip:  0.28 kB
+
+../dist/public/assets/trending-down-DoJm9Bn0.js            0.38 kB │ gzip:  0.28 kB
+
+../dist/public/assets/star-D-KCbPNC.js                     0.38 kB │ gzip:  0.29 kB
+
+../dist/public/assets/target-3NdVVkdu.js                   0.39 kB │ gzip:  0.26 kB
+
+../dist/public/assets/copy-DIukPvyq.js                     0.40 kB │ gzip:  0.30 kB
+
+../dist/public/assets/activity-CCTj3bcM.js                 0.40 kB │ gzip:  0.30 kB
+
+../dist/public/assets/database-Bar5ZVik.js                 0.41 kB │ gzip:  0.30 kB
+
+../dist/public/assets/chart-column-CWDxcPV7.js             0.42 kB │ gzip:  0.30 kB
+
+../dist/public/assets/zap-oOLx8L3G.js                      0.43 kB │ gzip:  0.31 kB
+
+../dist/public/assets/shield-BnKLIUDu.js                   0.44 kB │ gzip:  0.32 kB
+../dist/public/assets/wallet-CdpXXgXK.js                   0.46 kB │ gzip:  0.31 kB
+../dist/public/assets/send-JuOKEXnn.js                     0.46 kB │ gzip:  0.33 kB
+
+../dist/public/assets/users-8OTpWtSl.js                    0.47 kB │ gzip:  0.32 kB
+../dist/public/assets/label-8aqm7uHA.js                    0.55 kB │ gzip:  0.37 kB
+
+../dist/public/assets/sparkles-DALIIPYu.js                 0.68 kB │ gzip:  0.40 kB
+../dist/public/assets/badge-BITFdMjk.js                    0.71 kB │ gzip:  0.37 kB
+../dist/public/assets/layers-BrMpS3f1.js                   0.82 kB │ gzip:  0.39 kB
+
+../dist/public/assets/brain-BcwEO_HX.js                    0.90 kB │ gzip:  0.47 kB
+
+../dist/public/assets/progress-DCBHVs2s.js                 2.16 kB │ gzip:  1.10 kB
+
+../dist/public/assets/Navigation-O6HkVmiv.js               3.72 kB │ gzip:  1.33 kB
+
+../dist/public/assets/SharedChat-Ct5Epl0_.js               4.54 kB │ gzip:  1.75 kB
+../dist/public/assets/queryClient-Dxfm193Y.js              4.70 kB │ gzip:  2.02 kB
+../dist/public/assets/tabs-DwmgbOKK.js                     6.96 kB │ gzip:  2.86 kB
+../dist/public/assets/TrinityPrompt-ChZv69pX.js            8.21 kB │ gzip:  2.60 kB
+
+../dist/public/assets/TrinityRoadmap-DEYx1Ucd.js           9.35 kB │ gzip:  2.93 kB
+
+../dist/public/assets/TrinityTaskBoard-BN_XhOLq.js        10.06 kB │ gzip:  3.39 kB
+../dist/public/assets/useQuery-CxpOBp-6.js                10.38 kB │ gzip:  3.66 kB
+
+../dist/public/assets/DevHub-Bp7EEgvQ.js                  10.78 kB │ gzip:  3.21 kB
+
+../dist/public/assets/StatusDashboard-D0J_RO0m.js         11.12 kB │ gzip:  3.06 kB
+
+../dist/public/assets/HyperDAG-BZ86KZus.js                11.70 kB │ gzip:  3.37 kB
+../dist/public/assets/WalletConnect4FA-C5qWULoH.js        11.86 kB │ gzip:  3.06 kB
+../dist/public/assets/web3-training-academy-BSh-hJoy.js   13.56 kB │ gzip:  3.97 kB
+../dist/public/assets/AIConcierge-CeCP95Pl.js             15.67 kB │ gzip:  3.89 kB
+../dist/public/assets/APIDocumentation-DTelRLvM.js        15.87 kB │ gzip:  4.73 kB
+
+../dist/public/assets/select-v5oOiKcE.js                  22.10 kB │ gzip:  7.63 kB
+
+../dist/public/assets/dialog-Bl-bK5dY.js                  23.63 kB │ gzip:  8.60 kB
+
+../dist/public/assets/ShareLanding-Bbrdot2o.js            24.13 kB │ gzip:  8.36 kB
+
+../dist/public/assets/ValueFocusedChat-CG0WyJvD.js        53.41 kB │ gzip: 15.09 kB
+../dist/public/assets/motion-CDs2vWD-.js                  96.57 kB │ gzip: 32.59 kB
+../dist/public/assets/textarea-CfjJUaUC.js               114.61 kB │ gzip: 31.40 kB
+
+../dist/public/assets/index-Dm9i0-1k.js                  277.79 kB │ gzip: 90.41 kB
+
+✓ built in 14.96s
+
+2025-11-10T02:21:51Z info: Pushing pid1 binary layer...
+2025-11-10T02:21:52Z info: Created pid1 binary layer
+2025-11-10T02:22:00Z info: Pushing Repl layer...
+2025-11-10T02:22:00Z info: Pushing hosting layer...
+2025-11-10T02:22:00Z info: Retrieved cached nix layer
+2025-11-10T02:22:01Z info: Created hosting layer
+2025-11-10T02:28:11Z info: Created Repl layer
+2025-11-10T02:28:11Z info: Pushing Repl (cache) layer...
+2025-11-10T02:28:11Z info: Created Repl (cache) layer
+2025-11-10T02:28:11Z error: image size is over the limit of 8 GiB

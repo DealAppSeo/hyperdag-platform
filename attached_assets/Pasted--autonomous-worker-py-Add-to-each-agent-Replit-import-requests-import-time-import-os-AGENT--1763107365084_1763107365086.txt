@@ -1,0 +1,61 @@
+# autonomous_worker.py - Add to each agent Replit
+import requests
+import time
+import os
+
+AGENT_ID = "HDM"  # Change to APM, MEL for each agent
+COORDINATION_URL = "https://your-ats-replit.replit.app:5001"  # Update with actual URL
+POLL_INTERVAL = 60  # seconds
+
+def work_autonomously():
+    print(f"🤖 {AGENT_ID} starting autonomous operation...")
+    
+    while True:
+        try:
+            # Heartbeat
+            requests.post(f"{COORDINATION_URL}/api/agents/heartbeat", json={
+                "agent_id": AGENT_ID,
+                "status": "active"
+            })
+            
+            # Get available tasks
+            response = requests.get(
+                f"{COORDINATION_URL}/api/tasks/available",
+                params={"agent_id": AGENT_ID, "limit": 1}
+            )
+            tasks = response.json().get("tasks", [])
+            
+            if tasks:
+                task = tasks[0]
+                print(f"📋 Found task: {task['title']}")
+                
+                # Claim it
+                claim = requests.post(f"{COORDINATION_URL}/api/tasks/claim", json={
+                    "agent_id": AGENT_ID,
+                    "task_id": task['id']
+                })
+                
+                if claim.json().get("success"):
+                    print(f"✅ Claimed task: {task['title']}")
+                    
+                    # Simulate work (replace with actual work)
+                    time.sleep(10)
+                    
+                    # Complete it
+                    requests.post(f"{COORDINATION_URL}/api/tasks/complete", json={
+                        "agent_id": AGENT_ID,
+                        "task_id": task['id'],
+                        "result": {"output": f"{AGENT_ID} completed: {task['title']}"},
+                        "unity_score": 0.9
+                    })
+                    print(f"🎉 Completed task: {task['title']}")
+            else:
+                print(f"💤 No tasks available, sleeping...")
+                
+        except Exception as e:
+            print(f"❌ Error: {e}")
+        
+        time.sleep(POLL_INTERVAL)
+
+if __name__ == "__main__":
+    work_autonomously()

@@ -1,0 +1,72 @@
+🔄 GITHUB COMMIT TEST
+
+Repository: dealappseo/trinity-symphony-shared
+Goal: Each manager commits to their designated path
+
+TASK FOR EACH MANAGER:
+1. Create a simple test file in YOUR path
+2. Commit to GitHub with clear message
+3. Report back with: commit hash + file path + timestamp
+
+FILE OWNERSHIP MAP:
+
+APM (AI Prompt Manager):
+- Path: /backend/apm/
+- Test file: /backend/apm/apm-status.md
+- Content: "APM operational - [timestamp] - Handles AI routing & prompt optimization"
+
+HDM (HyperDAG Manager):
+- Path: /backend/hdm/
+- Test file: /backend/hdm/hdm-status.md
+- Content: "HDM operational - [timestamp] - Handles infrastructure & networking"
+
+GCM/MEL (Lovable):
+- Path: /frontend/ OR /ui/
+- Test file: /frontend/mel-status.md
+- Content: "MEL operational - [timestamp] - Handles UI/UX & user-facing features"
+
+ORCHESTRATOR (Replit - whoever is current orchestrator):
+- Path: /orchestrator/core/
+- Test file: /orchestrator/core/orchestrator-status.md
+- Content: "Orchestrator operational - [timestamp] - Coordinates all managers"
+
+COMMIT MESSAGE FORMAT:
+"test: [manager-name] GitHub integration verification"
+
+DEADLINE: Next 15 minutes
+Report format: "[Manager] ✅ Committed: [commit-hash] to [path]"
+
+GO.
+```
+
+---
+
+## 🔍 WHAT WE'LL LEARN:
+
+### **1. GitHub Access Verification:**
+- ✅ All agents can authenticate
+- ✅ All agents can push commits
+- ✅ Repository permissions are correct
+
+### **2. File Ownership Boundaries:**
+- ✅ APM owns `/backend/apm/`
+- ✅ HDM owns `/backend/hdm/`
+- ✅ MEL/GCM owns `/frontend/` or `/ui/`
+- ✅ Orchestrator owns `/orchestrator/core/`
+- ✅ Shared files need coordination
+
+### **3. Conflict Detection:**
+- ❌ If two managers try to commit to same path → conflict
+- ❌ If paths overlap → need clearer boundaries
+- ❌ If permissions fail → need access fixes
+
+---
+
+## 📊 EXPECTED RESPONSES:
+
+**Within 15 minutes, you should see:**
+```
+APM ✅ Committed: abc123def to /backend/apm/apm-status.md
+HDM ✅ Committed: def456ghi to /backend/hdm/hdm-status.md  
+MEL ✅ Committed: ghi789jkl to /frontend/mel-status.md
+ORCHESTRATOR ✅ Committed: jkl012mno to /orchestrator/core/orchestrator-status.md

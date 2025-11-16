@@ -1,0 +1,243 @@
+{
+  "workflows": [
+    {
+      "name": "Reputation Milestone Celebration",
+      "description": "Automated congratulations and next-step guidance for reputation achievements",
+      "trigger": {
+        "type": "webhook",
+        "url": "https://api.hyperdag.org/api/n8n/webhooks/reputation-updated",
+        "method": "POST"
+      },
+      "nodes": [
+        {
+          "type": "webhook",
+          "name": "Reputation Update Trigger"
+        },
+        {
+          "type": "if",
+          "name": "Check Milestone",
+          "conditions": [
+            "{{ $json.milestone.reached >= 10 }}",
+            "{{ $json.milestone.reached >= 25 }}",
+            "{{ $json.milestone.reached >= 50 }}",
+            "{{ $json.milestone.reached >= 100 }}"
+          ]
+        },
+        {
+          "type": "gmail",
+          "name": "Send Milestone Email",
+          "templates": {
+            "10": {
+              "subject": "🎉 Welcome to the HyperDAG Community - 10 Points!",
+              "body": "Congratulations {{$json.user.username}}! You've earned your first reputation points. Complete your profile to unlock AI-powered grant recommendations!"
+            },
+            "25": {
+              "subject": "⭐ Rising Star Status - 25 Points Achieved!",
+              "body": "Amazing progress {{$json.user.username}}! You're becoming a HyperDAG star. Ready to build your referral network and earn bonus tokens?"
+            },
+            "50": {
+              "subject": "🏗️ Community Builder Status Unlocked!",
+              "body": "Incredible! {{$json.user.username}}, you've reached 50 points. Access exclusive grants and AI team matching features now available!"
+            },
+            "100": {
+              "subject": "🚀 HyperDAG Expert - Top 10% Achievement!",
+              "body": "Outstanding {{$json.user.username}}! You're now a HyperDAG Expert. Leadership opportunities and mentorship programs await you."
+            }
+          }
+        },
+        {
+          "type": "hyperdag_api",
+          "name": "Award Bonus Tokens",
+          "action": "POST /api/user/award-tokens",
+          "data": {
+            "userId": "{{ $json.user.id }}",
+            "amount": "{{ $json.milestone.reached }}",
+            "reason": "Milestone achievement"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Profile Completion Nudges",
+      "description": "Progressive encouragement to complete profile for better AI recommendations",
+      "trigger": {
+        "type": "schedule",
+        "interval": "daily"
+      },
+      "nodes": [
+        {
+          "type": "hyperdag_api",
+          "name": "Get Incomplete Profiles",
+          "action": "GET /api/users/incomplete-profiles"
+        },
+        {
+          "type": "loop",
+          "name": "Process Each User"
+        },
+        {
+          "type": "if",
+          "name": "Check Days Since Registration",
+          "conditions": [
+            "daysSince = 1: Send welcome nudge",
+            "daysSince = 3: Send AI benefits nudge", 
+            "daysSince = 7: Send opportunity nudge",
+            "daysSince = 14: Send final chance nudge"
+          ]
+        },
+        {
+          "type": "gmail",
+          "name": "Send Profile Completion Email",
+          "templates": {
+            "day1": {
+              "subject": "Complete your HyperDAG profile for personalized opportunities",
+              "body": "Hi {{$json.username}}! Complete your profile to get AI-powered recommendations tailored just for you."
+            },
+            "day3": {
+              "subject": "Your skills + our AI = perfect grant matches",
+              "body": "{{$json.username}}, our AI is ready to find grants that match your exact skills. Just complete your profile!"
+            },
+            "day7": {
+              "subject": "Users with complete profiles get 3x more opportunities",
+              "body": "Don't miss out {{$json.username}}! Complete profiles receive 3x more collaboration invites and grant matches."
+            },
+            "day14": {
+              "subject": "Last chance: Unlock AI team matching with complete profile",
+              "body": "Final reminder {{$json.username}} - complete your profile to access our powerful AI team matching system!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Referral Success Celebration",
+      "description": "Reward and celebrate successful referrals to build network effects",
+      "trigger": {
+        "type": "webhook",
+        "url": "https://api.hyperdag.org/api/n8n/webhooks/user-registered",
+        "method": "POST"
+      },
+      "nodes": [
+        {
+          "type": "webhook",
+          "name": "New User Registration"
+        },
+        {
+          "type": "if",
+          "name": "Check If Referred",
+          "condition": "{{ $json.user.referredBy !== null }}"
+        },
+        {
+          "type": "hyperdag_api",
+          "name": "Get Referrer Details",
+          "action": "GET /api/users/{{ $json.user.referredBy }}"
+        },
+        {
+          "type": "gmail",
+          "name": "Thank Referrer",
+          "template": {
+            "subject": "🎊 Success! {{$json.user.username}} joined through your referral",
+            "body": "Great news {{$json.referrer.username}}! {{$json.user.username}} just joined HyperDAG through your link. You've earned 50 bonus tokens!"
+          }
+        },
+        {
+          "type": "hyperdag_api",
+          "name": "Award Referrer Bonus",
+          "action": "POST /api/user/award-tokens",
+          "data": {
+            "userId": "{{ $json.referrer.id }}",
+            "amount": 50,
+            "reason": "Successful referral"
+          }
+        },
+        {
+          "type": "slack",
+          "name": "Notify Team",
+          "message": "🎉 New referral success! {{$json.referrer.username}} brought in {{$json.user.username}}"
+        }
+      ]
+    },
+    {
+      "name": "AI Grant Matching Notifications",
+      "description": "Proactive grant recommendations based on skills and reputation",
+      "trigger": {
+        "type": "webhook",
+        "url": "https://api.hyperdag.org/api/n8n/webhooks/grant-application",
+        "method": "POST"
+      },
+      "nodes": [
+        {
+          "type": "hyperdag_api",
+          "name": "Get AI Grant Recommendations",
+          "action": "POST /api/ai/grant-recommendations",
+          "data": {
+            "userId": "{{ $json.applicant.id }}",
+            "skills": "{{ $json.applicant.skills }}",
+            "reputation": "{{ $json.applicant.reputationScore }}"
+          }
+        },
+        {
+          "type": "if",
+          "name": "Check Match Quality",
+          "condition": "{{ $json.matchScore >= 0.8 }}"
+        },
+        {
+          "type": "gmail",
+          "name": "Send Grant Recommendations",
+          "template": {
+            "subject": "🎯 Perfect Grant Matches for Your Skills Found!",
+            "body": "Hi {{$json.applicant.username}}! Our AI found {{$json.matches.length}} grants that are perfect for your background. Your match score: {{$json.matchScore * 100}}%"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Team Building Suggestions",
+      "description": "AI-powered team member recommendations for new projects",
+      "trigger": {
+        "type": "webhook", 
+        "url": "https://api.hyperdag.org/api/n8n/webhooks/project-created",
+        "method": "POST"
+      },
+      "nodes": [
+        {
+          "type": "webhook",
+          "name": "Project Creation Trigger"
+        },
+        {
+          "type": "if",
+          "name": "Check If Looking for Team",
+          "condition": "{{ $json.project.lookingForTeam === true }}"
+        },
+        {
+          "type": "hyperdag_api",
+          "name": "Get AI Team Recommendations",
+          "action": "POST /api/ai/team-recommendations",
+          "data": {
+            "projectId": "{{ $json.project.id }}",
+            "requiredSkills": "{{ $json.project.tags }}",
+            "creatorId": "{{ $json.creator.id }}"
+          }
+        },
+        {
+          "type": "loop",
+          "name": "Process Each Recommendation"
+        },
+        {
+          "type": "gmail",
+          "name": "Send Collaboration Invite",
+          "template": {
+            "subject": "🤝 Perfect project match: {{$json.project.title}}",
+            "body": "Hi {{$json.candidate.username}}! {{$json.creator.username}} is looking for someone with your exact skills for their project '{{$json.project.title}}'. Interested in collaborating?"
+          }
+        }
+      ]
+    }
+  ],
+  "setup_instructions": {
+    "step1": "Import these workflow templates into n8n",
+    "step2": "Configure Gmail/email service credentials",
+    "step3": "Set HyperDAG API authentication tokens",
+    "step4": "Test each workflow with sample data",
+    "step5": "Enable workflows and monitor engagement metrics"
+  }
+}

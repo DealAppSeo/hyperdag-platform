@@ -1,0 +1,224 @@
+// server/services/trinity/consumer-loop.ts
+import { createClient } from '@supabase/supabase-js';
+
+const supabase = createClient(
+  'https://qnnpjhlxljtqyigedwkb.supabase.co',
+  process.env.SUPABASE_SERVICE_KEY || ''
+);
+
+interface Task {
+  id: number;
+  prompt: string;
+  priority: number;
+  status: string;
+  created_at: string;
+}
+
+let isProcessing = false;
+let circuitBreakerOpen = false;
+let processedCount = 0;
+const CIRCUIT_BREAKER_LIMIT = 100; // Reset limit
+
+// Simple LLM call (using free tier)
+async function generateResponse(prompt: string): Promise<string> {
+  try {
+    // Using Groq free tier for now - replace with your preferred provider
+    const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${process.env.GROQ_API_KEY}`
+      },
+      body: JSON.stringify({
+        model: 'llama-3.1-8b-instant',
+        messages: [
+          {
+            role: 'system',
+            content: 'You are a compassionate Christian counselor. Provide brief, biblical encouragement.'
+          },
+          {
+            role: 'user',
+            content: prompt
+          }
+        ],
+        max_tokens: 200,
+        temperature: 0.7
+      })
+    });
+
+    if (!response.ok) {
+      throw new Error(`LLM API error: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data.choices[0].message.content;
+  } catch (error) {
+    console.error('LLM generation error:', error);
+    return `I hear your concern: "${prompt}". While I'm having technical difficulties providing a detailed response, please know that you're not alone. Philippians 4:6-7 reminds us to bring our worries to God in prayer. Consider reaching out to a trusted pastor or counselor for support.`;
+  }
+}
+
+// Process a single task
+async function processTask(task: Task): Promise<void> {
+  console.log(`[HDM Consumer] Processing task ${task.id}: ${task.prompt.substring(0, 50)}...`);
+
+  // Update to processing status
+  await supabase
+    .from('trinity_tasks')
+    .update({ 
+      status: 'processing',
+      assigned_agent: 'HDM',
+      updated_at: new Date().toISOString()
+    })
+    .eq('id', task.id);
+
+  try {
+    // Generate response
+    const response = await generateResponse(task.prompt);
+
+    // Save completed task
+    await supabase
+      .from('trinity_tasks')
+      .update({
+        status: 'completed',
+        response: response,
+        updated_at: new Date().toISOString()
+      })
+      .eq('id', task.id);
+
+    processedCount++;
+    console.log(`[HDM Consumer] ✅ Completed task ${task.id} (${processedCount} total)`);
+
+    // Log to autonomous_logs
+    await supabase
+      .from('autonomous_logs')
+      .insert({
+        agent: 'HDM',
+        event: 'task_completed',
+        details: { task_id: task.id, prompt_preview: task.prompt.substring(0, 100) },
+        repid_tag: 'REPORTED',
+        timestamp: new Date().toISOString()
+      });
+
+    // Check circuit breaker
+    if (processedCount >= CIRCUIT_BREAKER_LIMIT) {
+      circuitBreakerOpen = true;
+      console.log(`[HDM Consumer] ⚠️ Circuit breaker OPEN - reached ${CIRCUIT_BREAKER_LIMIT} tasks`);
+    }
+  } catch (error) {
+    console.error(`[HDM Consumer] ❌ Error processing task ${task.id}:`, error);
+
+    // Mark as failed
+    await supabase
+      .from('trinity_tasks')
+      .update({
+        status: 'failed',
+        response: `Error: ${error.message}`,
+        updated_at: new Date().toISOString()
+      })
+      .eq('id', task.id);
+  }
+}
+
+// Main consumer loop
+export async function startConsumerLoop(): Promise<void> {
+  console.log('[HDM Consumer] 🚀 Starting consumer loop...');
+
+  // Reset circuit breaker every hour
+  setInterval(() => {
+    if (circuitBreakerOpen) {
+      console.log('[HDM Consumer] 🔄 Resetting circuit breaker');
+      circuitBreakerOpen = false;
+      processedCount = 0;
+    }
+  }, 60 * 60 * 1000); // 1 hour
+
+  // Main loop - check every 5 minutes
+  setInterval(async () => {
+    if (isProcessing) {
+      console.log('[HDM Consumer] ⏳ Still processing previous batch, skipping...');
+      return;
+    }
+
+    if (circuitBreakerOpen) {
+      console.log('[HDM Consumer] 🛑 Circuit breaker open, waiting for reset...');
+      return;
+    }
+
+    isProcessing = true;
+
+    try {
+      // Fetch pending tasks (up to 10 at a time, ordered by priority)
+      const { data: tasks, error } = await supabase
+        .from('trinity_tasks')
+        .select('*')
+        .eq('status', 'pending')
+        .order('priority', { ascending: true })
+        .order('created_at', { ascending: true })
+        .limit(10);
+
+      if (error) {
+        console.error('[HDM Consumer] ❌ Error fetching tasks:', error);
+        isProcessing = false;
+        return;
+      }
+
+      if (!tasks || tasks.length === 0) {
+        console.log('[HDM Consumer] ✨ No pending tasks');
+        isProcessing = false;
+        return;
+      }
+
+      console.log(`[HDM Consumer] 📋 Found ${tasks.length} pending tasks`);
+
+      // Process tasks sequentially
+      for (const task of tasks) {
+        if (circuitBreakerOpen) {
+          console.log('[HDM Consumer] 🛑 Circuit breaker opened mid-batch, stopping');
+          break;
+        }
+        await processTask(task);
+      }
+
+      console.log(`[HDM Consumer] ✅ Batch complete. Total processed: ${processedCount}`);
+    } catch (error) {
+      console.error('[HDM Consumer] ❌ Unexpected error in consumer loop:', error);
+    } finally {
+      isProcessing = false;
+    }
+  }, 5 * 60 * 1000); // 5 minutes
+
+  // Also run immediately on startup
+  console.log('[HDM Consumer] 🔥 Running initial check...');
+  setTimeout(async () => {
+    isProcessing = true;
+    try {
+      const { data: tasks } = await supabase
+        .from('trinity_tasks')
+        .select('*')
+        .eq('status', 'pending')
+        .order('priority', { ascending: true })
+        .order('created_at', { ascending: true })
+        .limit(10);
+
+      if (tasks && tasks.length > 0) {
+        console.log(`[HDM Consumer] 📋 Processing ${tasks.length} tasks immediately`);
+        for (const task of tasks) {
+          if (circuitBreakerOpen) break;
+          await processTask(task);
+        }
+      }
+    } catch (error) {
+      console.error('[HDM Consumer] ❌ Error in initial check:', error);
+    } finally {
+      isProcessing = false;
+    }
+  }, 5000); // 5 seconds after startup
+}
+
+// Manual circuit breaker reset (call this if needed)
+export function resetCircuitBreaker(): void {
+  circuitBreakerOpen = false;
+  processedCount = 0;
+  console.log('[HDM Consumer] 🔄 Circuit breaker manually reset');
+}

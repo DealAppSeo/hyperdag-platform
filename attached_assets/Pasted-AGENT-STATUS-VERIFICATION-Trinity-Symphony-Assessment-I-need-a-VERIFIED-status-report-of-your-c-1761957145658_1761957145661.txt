@@ -1,0 +1,223 @@
+AGENT STATUS VERIFICATION - Trinity Symphony Assessment
+
+I need a VERIFIED status report of your current capabilities and production readiness. Be brutally honest - say "NOT WORKING" if something doesn't actually function, "WORKING IN DEV" if it works but isn't production-ready, or "PRODUCTION READY" if it's fully operational.
+
+## 1. IDENTITY & PLATFORM
+- Agent name:
+- Platform (Replit/Lovable/Bolt):
+- Primary function:
+- Last verified working: [date/time]
+
+## 2. CURRENT CAPABILITIES - VERIFIED STATUS
+
+For each capability, provide:
+✅ PRODUCTION READY (works reliably, tested)
+🟡 WORKING IN DEV (works but not tested/deployed)
+❌ NOT WORKING (broken or not implemented)
+❓ UNKNOWN (unclear status)
+
+### A. Core Functions
+[ ] Can process user requests
+[ ] Can execute code/tasks
+[ ] Can read files from project
+[ ] Can write files to project
+[ ] Can access external APIs
+
+### B. Communication Capabilities  
+[ ] Has HTTP endpoint (can receive webhooks)
+[ ] Can make HTTP POST requests (can send to other services)
+[ ] Can read from database
+[ ] Can write to database
+[ ] Can access GitHub repository
+
+### C. Autonomous Operation
+[ ] Can run without human prompting
+[ ] Can poll for new tasks automatically
+[ ] Can detect when other agents complete work
+[ ] Can schedule recurring operations
+[ ] Can trigger other agents
+
+### D. Trinity-Specific Features
+[ ] ANFIS routing (if applicable)
+[ ] Multi-LLM coordination
+[ ] Cost optimization/arbitrage
+[ ] Semantic RAG/knowledge base
+[ ] Real-time status updates
+
+## 3. API ENDPOINTS & INTEGRATION
+
+**If you have HTTP endpoints, provide:**
+- Base URL:
+- Available endpoints:
+- Authentication method:
+- Example curl command:
+
+**If you DON'T have HTTP endpoints:**
+- Can you create them? (YES/NO)
+- What would you need to create them?
+
+## 4. CURRENT CODE LOCATION
+
+- Where is your source code? (exact path/repo)
+- Is it backed up to GitHub? (YES/NO/PARTIAL)
+- If NO: Can you export it now? (YES/NO)
+- Last code update: [date]
+
+## 5. DEPENDENCIES & ENVIRONMENT
+
+**List all services you depend on:**
+- Database: (type/URL/status)
+- External APIs: (which ones/keys configured/working?)
+- Other agents: (which ones/how you communicate)
+- File storage: (where/how you access)
+
+**Environment variables/secrets configured:**
+- [ ] API keys set up
+- [ ] Database connection working
+- [ ] Authentication working
+- [ ] All dependencies installed
+
+## 6. TESTING & VERIFICATION
+
+**Run these tests RIGHT NOW and report results:**
+
+### Test 1: Self-Verification
+Execute a simple task (like "respond with current timestamp")
+Result:
+
+### Test 2: External API Call
+Try calling a free API (like https://api.github.com)
+Result:
+
+### Test 3: File Operations
+Try reading a file and writing a new file
+Result:
+
+### Test 4: Code Execution  
+Run a simple calculation or script
+Result:
+
+## 7. PRODUCTION READINESS BLOCKERS
+
+**List EVERY blocker preventing production deployment:**
+1. [Blocker description]
+   - Severity: CRITICAL/HIGH/MEDIUM/LOW
+   - Estimated fix time:
+   - What's needed to fix:
+
+2. [Next blocker...]
+
+## 8. COORDINATION REQUIREMENTS
+
+**To coordinate with other Trinity agents, I need:**
+- [ ] Shared database access
+- [ ] Webhook endpoints from other agents
+- [ ] Task queue system
+- [ ] Status notification system
+- [ ] Specific integration: [describe]
+
+**What I can provide to other agents:**
+- [ ] My status updates
+- [ ] Task completion notifications
+- [ ] Data/results from my processing
+- [ ] Specific capability: [describe]
+
+## 9. IMMEDIATE NEXT STEPS
+
+**If you had 1 hour RIGHT NOW, what could you accomplish?**
+1. 
+2.
+3.
+
+**What do you need from the user to move forward?**
+1.
+2.
+3.
+
+## 10. PROOF OF LIFE
+
+**To verify you're actually working, execute this:**
+- Current timestamp:
+- System platform: 
+- Python/Node version:
+- Available memory:
+- Can access internet: (YES/NO - ping google.com)
+- Can execute shell commands: (YES/NO - try ls or dir)
+
+---
+
+END OF ASSESSMENT
+
+Reply with COMPLETE assessment. Say "I DON'T KNOW" rather than guessing. Say "NOT WORKING" rather than "should work" or "designed to work."
+```
+
+---
+
+## For ImageBearer.org (Manual Testing by YOU)
+
+Since MEL is a web app, you'll need to test it manually. Use this checklist:
+```
+IMAGEBEARER.ORG MANUAL ASSESSMENT
+
+## Login & Access
+[ ] Site loads: imagebearer.org
+[ ] Can create account
+[ ] Can log in
+[ ] Dashboard appears
+[ ] No console errors (F12 → Console tab)
+
+## Core Features
+[ ] AI chat works (get a response)
+[ ] Can upload/share images
+[ ] Purpose matching works
+[ ] Discipleship features accessible
+[ ] Mobile responsive (test on phone)
+
+## Backend Integration  
+[ ] Supabase connected (data saves/loads)
+[ ] AI API working (gets responses)
+[ ] Authentication persists (refresh page, still logged in)
+[ ] Real-time updates work (if applicable)
+
+## Agent Capabilities
+[ ] Can MEL be triggered via API? (check Lovable docs)
+[ ] Does MEL have webhook endpoints?
+[ ] Can MEL read from database directly?
+[ ] Can MEL write status updates somewhere?
+
+## Blockers to Production
+1.
+2.
+3.
+
+Screenshot: [paste main dashboard screenshot]
+```
+
+---
+
+## For AI Trinity Symphony (Bolt)
+
+If you can access it:
+```
+BOLT TRINITY SYMPHONY ASSESSMENT
+
+## Current State
+[ ] Can I access the project? (YES/NO)
+[ ] Does preview load? (YES/NO)
+[ ] Are there build errors? (YES/NO - list them)
+[ ] Is code exportable? (YES/NO)
+
+## Functionality
+[ ] Dashboard displays
+[ ] Agent status visible
+[ ] Can submit tasks
+[ ] Routing logic present
+[ ] Cost tracking works
+
+## Recommendation
+Should we:
+[ ] Fix and continue
+[ ] Export code and rebuild elsewhere  
+[ ] Abandon completely
+
+Reason:
