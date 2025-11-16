@@ -1,0 +1,51 @@
+# Build outputs
+*.o
+*.so
+*.lo
+*.la
+*.a
+build/
+release/
+*.deb
+*.rpm
+*.AppImage
+
+# Autotools
+Makefile
+Makefile.in
+/autom4te.cache/
+/config.*
+/configure
+/libtool
+/stamp-h1
+/aclocal.m4
+/compile
+/depcomp
+/install-sh
+/ltmain.sh
+/missing
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Local configs
+config.json.local
+*.log
+/mel.db
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Replit
+.replit
+replit.nix
+.config/
+.cache/

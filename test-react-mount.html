@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>React Mount Test</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script>
+        console.log("Test script running");
+        document.getElementById('root').innerHTML = '<h1>Direct DOM manipulation works</h1>';
+        
+        // Test if React libraries are loading
+        setTimeout(() => {
+            if (window.React) {
+                console.log("React is available");
+            } else {
+                console.log("React is NOT available");
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

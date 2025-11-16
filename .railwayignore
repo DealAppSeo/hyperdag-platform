@@ -1,0 +1,58 @@
+# Railway Deployment - Exclude development files
+# Similar to .dockerignore but for Railway
+
+# Development directories
+agents/
+infrastructure/
+HyperDAGManager/
+HyperDagManager/
+application_templates/
+docs/
+circuits/
+contracts/
+blockchain/
+backend/
+attached_assets/
+opportunities/
+outreach_templates/
+replit_agent/
+managers/
+mel/
+orchestrator/
+quickstart/
+keypairs/
+
+# Build artifacts (will be rebuilt)
+node_modules/
+.cache/
+
+# Development files
+*.md
+!README.md
+*.txt
+*.py
+*.tar.gz
+dev.sh
+
+# Git
+.git/
+.github/
+
+# Logs
+*.log
+logs/
+/tmp/
+
+# IDE
+.vscode/
+.cursor/
+.idea/
+
+# Test files
+__tests__/
+test/
+tests/
+*.test.js
+*.test.ts
+*.spec.js
+*.spec.ts

@@ -1,0 +1,48 @@
+[package]
+name = "repid-zkp-circuits"
+version = "1.0.0"
+edition = "2021"
+description = "HyperDAG RepID ZKP Circuits - Custom STARK implementation based on Plonky3 principles"
+
+[dependencies]
+# Cryptographic primitives
+sha2 = "0.10"
+blake3 = "1.5" 
+rand = "0.8.5"
+hex = "0.4"
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+bincode = "1.3"
+
+# Mathematical operations for finite fields
+num-bigint = "0.4"
+num-traits = "0.2"
+num-integer = "0.1"
+
+# Polynomial and field operations
+ark-ff = "0.4"
+ark-poly = "0.4"
+ark-std = "0.4"
+
+# Utilities
+itertools = "0.12"
+tracing = "0.1"
+thiserror = "1.0"
+chrono = { version = "0.4", features = ["serde"] }
+md5 = "0.7"
+rand_chacha = "0.3.1"
+
+[features]
+default = []
+parallel = []
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+panic = "abort"
+
+[profile.dev]
+opt-level = 1

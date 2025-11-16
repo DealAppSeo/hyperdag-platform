@@ -1,0 +1,35 @@
+{
+    "version": "1.0.0",
+    "ai_provider": "local",
+    "providers": {
+        "openai": {
+            "api_key": "",
+            "model": "gpt-3.5-turbo"
+        },
+        "anthropic": {
+            "api_key": "",
+            "model": "claude-3-haiku-20240307"
+        },
+        "google": {
+            "api_key": "",
+            "model": "gemini-1.5-flash"
+        },
+        "local": {
+            "enabled": true,
+            "model_path": "",
+            "use_gpu": false
+        }
+    },
+    "features": {
+        "auto_complete": true,
+        "error_detection": true,
+        "code_explanation": true,
+        "anticipatory_mode": true,
+        "learning_enabled": true
+    },
+    "privacy": {
+        "telemetry": false,
+        "local_only": false,
+        "store_history": true
+    }
+}
