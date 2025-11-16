@@ -1,0 +1,48 @@
+~/workspace$ rm -f .git/index.lock
+git add railway.json
+git commit -m "Switch to Railpack builder"
+git push https://DealAppSeo:YOUR_TOKEN@github.com/DealAppSeo/hyperdag-platform.git main
+On branch main
+nothing to commit, working tree clean
+remote: Invalid username or token. Password authentication is not supported for Git operations.
+fatal: Authentication failed for 'https://github.com/DealAppSeo/hyperdag-platform.git/'
+~/workspace$ rm -f .git/index.lock
+git add railway.json
+git commit -m "Switch to Railpack builder"
+git push https://DealAppSeo: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@github.com/DealAppSeo/hyperdag-platform.git main
+On branch main
+nothing to commit, working tree clean
+Enumerating objects: 22, done.
+Counting objects: 100% (22/22), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (19/19), done.
+Writing objects: 100% (19/19), 331.19 KiB | 20.70 MiB/s, done.
+Total 19 (delta 14), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (14/14), completed with 3 local objects.
+remote: error: GH013: Repository rule violations found for refs/heads/main.
+remote: 
+remote: - GITHUB PUSH PROTECTION
+remote:   —————————————————————————————————————————
+remote:     Resolve the following violations before pushing again
+remote: 
+remote:     - Push cannot contain secrets
+remote: 
+remote:     
+remote:      (?) Learn how to resolve a blocked push
+remote:      https://docs.github.com/code-security/secret-scanning/working-with-secret-scanning-and-push-protection/working-with-push-protection-from-the-command-line#resolving-a-blocked-push
+remote:     
+remote:     
+remote:       —— GitHub Personal Access Token ——————————————————————
+remote:        locations:
+remote:          - commit: 304ef3f8b5724ca5ec9be37651909697347a4f89
+remote:            path: attached_assets/Pasted--workspace-rm-rf-git-git-init-echo-tar-gz-gitignore-echo-zip-gitignore-git-a-1763271260419_1763271260425.txt:8
+remote:     
+remote:        (?) To push, remove secret from commit(s) or follow this URL to allow the secret.
+remote:        https://github.com/DealAppSeo/hyperdag-platform/security/secret-scanning/unblock-secret/35Y3JekuCp4rFyYn88zIMHMWeCT
+remote:     
+remote: 
+remote: 
+To https://github.com/DealAppSeo/hyperdag-platform.git
+ ! [remote rejected] main -> main (push declined due to repository rule violations)
+error: failed to push some refs to 'https://github.com/DealAppSeo/hyperdag-platform.git'
+~/workspace$ 
