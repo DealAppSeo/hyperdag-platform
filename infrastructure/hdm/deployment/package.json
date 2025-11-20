@@ -30,7 +30,7 @@
     "@jridgewell/trace-mapping": "^0.3.25",
     "@langchain/anthropic": "^0.3.20",
     "@langchain/core": "^0.3.56",
-    "@langchain/langgraph": "^0.2.72",
+    "@langchain/langgraph": "^0.4.9",
     "@langchain/openai": "^0.5.10",
     "@maticnetwork/maticjs": "^3.9.2",
     "@maticnetwork/maticjs-web3": "^1.0.5",
