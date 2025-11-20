@@ -19,7 +19,7 @@
     "@alchemy/aa-alchemy": "^3.19.0",
     "@alchemy/aa-core": "^3.19.0",
     "@alchemy/aa-ethers": "^3.19.0",
-    "@anthropic-ai/sdk": "^0.37.0",
+    "@anthropic-ai/sdk": "^0.68.0",
     "@cosmjs/stargate": "^0.33.1",
     "@google-cloud/storage": "^7.17.2",
     "@google/genai": "^1.17.0",
