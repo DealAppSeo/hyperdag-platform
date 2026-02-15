@@ -46,5 +46,13 @@ We are building a unified ecosystem where AI serves humanity with honor and trut
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for detailed setup and coding standards.
 
+## 🕊️ Vision: Help People Help People
+This platform exists to **help people help people**. By orchestrating AI swarms through an ethical lens, we ensure that digital intelligence is used as a force for global democratization and uplift.
+
+### 📜 Basis for Truth
+Our algorithms and routing decisions are filtered through the virtues of **Philippians 4:8**. We seek to build a safe, ethical AI ecosystem alongside those who value justice, mercy, and humility (**Micah 6:8**).
+
+We welcome contributors to join our co-opetition model, building a resilient "principled swarm" that serves the ImageBearers of the future.
+
 ---
 *Powered by AI, Governed by People, Anchored in Truth.*
