@@ -1,0 +1,15 @@
+{
+    "name": "trinity-web3-bridge",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "packages/trinity-web3-bridge/src",
+    "targets": {
+        "test": {
+            "executor": "nx:run-commands",
+            "options": {
+                "command": "echo 'Add unit tests for bridge package'",
+                "cwd": "packages/trinity-web3-bridge"
+            }
+        }
+    }
+}
