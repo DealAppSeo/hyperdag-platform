@@ -14,7 +14,7 @@
     "build:quick": "vite build --mode production --sourcemap false --minify esbuild"
   },
   "dependencies": {
-    "@akashnetwork/akashjs": "^0.11.1",
+    "@akashnetwork/akashjs": "^1.0.0",
     "@alchemy/aa-accounts": "^3.19.0",
     "@alchemy/aa-alchemy": "^3.19.0",
     "@alchemy/aa-core": "^3.19.0",
@@ -29,7 +29,7 @@
     "@iota/sdk": "^1.1.6",
     "@jridgewell/trace-mapping": "^0.3.25",
     "@langchain/anthropic": "^0.3.20",
-    "@langchain/core": "^0.3.56",
+    "@langchain/core": "^1.1.14",
     "@langchain/langgraph": "^0.2.72",
     "@langchain/openai": "^0.5.10",
     "@maticnetwork/maticjs": "^3.9.2",
@@ -131,7 +131,7 @@
     "ipfs-http-client": "^60.0.1",
     "jsdom": "^26.1.0",
     "jsonwebtoken": "^9.0.2",
-    "langchain": "^0.3.26",
+    "langchain": "^1.0.1",
     "litellm": "^0.12.0",
     "lucide-react": "^0.453.0",
     "mailgun.js": "^12.0.2",
