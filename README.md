@@ -2,7 +2,10 @@
 
 > **The Intelligent Orchestration Layer for the HyperDAG Ecosystem**
 
-AI Trinity Symphony (HyperDAG Platform) is the orchestration engine designed to manage autonomous agent swarms, execute complex missions, and bridge AI operations with the **HyperDAG Protocol**.
+AI Trinity Symphony is the orchestration engine designed to manage autonomous agent swarms that **help people help people**. Grounded in our **Universal ZKP RepID System**, we execute missions with honor, truth, and justice.
+
+## 🌟 Our Philosophy: Ecosystem over Fragment
+We are building a unified "principled swarm". Contributing to the HyperDAG ecosystem means joining a collective effort to uplift humanity through ethical, quantum-hardened AI coordination.
 
 ## 🧠 The Orchestration Brain
 This repository acts as the operational layer for the dual-repo ecosystem:
