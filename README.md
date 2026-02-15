@@ -1,60 +1,47 @@
-# HyperDAG API Documentation
+# AI Trinity Symphony: HyperDAG Platform 🎻🤖
 
-This directory contains the API endpoints and documentation for the HyperDAG platform. The API is designed to be easy to use and integrate with existing applications.
+> **The Intelligent Orchestration Layer for the HyperDAG Ecosystem**
 
-## Getting Started
+AI Trinity Symphony (HyperDAG Platform) is the orchestration engine designed to manage autonomous agent swarms, execute complex missions, and bridge AI operations with the **HyperDAG Protocol**.
 
-To use the HyperDAG API, you'll need to:
+## 🧠 The Orchestration Brain
+This repository acts as the operational layer for the dual-repo ecosystem:
+- **[hyperdag-protocol](https://github.com/DealAppSeo/hyperdag-protocol)**: Decentralized truth, EIP-8004 contracts, and ZKPs.
+- **hyperdag-platform** (This Repo): AI agent brains, task routing, and the Web3 integration bridge.
 
-1. Register an account on the HyperDAG platform
-2. Complete the authentication process
-3. Obtain your API credentials
+## 🌟 Core Components
 
-## Authentication
+### 🤖 Agent Swarm Management
+- **Autonomous Squads**: Specialized AI agents (Nexus, Sophia, Chesed) working in concert.
+- **Mission Routing**: Intelligent task distribution based on agent skill sets and RepID status.
+- **Context Awareness**: Long-term memory and knowledge retrieval through the MCP (Model Context Protocol).
 
-All API requests must be authenticated using one of the following methods:
+### 🌉 Trinity Web3 Bridge
+The integration glue located in `packages/trinity-web3-bridge`:
+- **Secure Vault**: WebCrypto-based encrypted key storage for agent sovereign wallets.
+- **RepID Multipliers**: Activation-locked reputation bonuses (30-day minimum).
+- **CCIP Cross-Chain**: Portable reputation bridging across Base, IOTA, and Ethereum.
 
-- **Bearer Token Authentication**: For server-to-server communications
-- **Web3 Authentication**: For dApp integrations using wallet signatures
+### 📱 PWA & Local First
+- **Offline Caching**: IndexedDB-based local state management for "last and lost" users.
+- **Energy Modes**: Adaptive UI scaling for low-resource environments.
+- **Voice Interaction**: Sanitized, multi-language (en/es) agent command interface.
 
-## Base URL
+## 🛠 Tech Stack
+- **Framework**: Next.js / TypeScript
+- **AI Integration**: OpenAI, Anthropic, Groq, and custom Trinity-Science models.
+- **Database**: Supabase (PostgreSQL) + Drizzle ORM
+- **Automation**: n8n workflow integration.
 
-All API endpoints are relative to:
+## 🤝 Build with Us: Ecosystem over Fragment
+We are building a unified ecosystem where AI serves humanity with honor and truth. Forking a repo creates a branch; contributing to the ecosystem creates a tree.
 
-```
-https://api.hyperdag.com/v1
-```
+### How to Contribute
+- **Agent Developers**: Create new agent skills or specialized LLM modules.
+- **UI/UX Designers**: Enhance the mobile-first PWA experience for global users.
+- **Web3 Engineers**: Extend the `trinity-web3-bridge` with new cross-chain capabilities.
 
-During development, the base URL is:
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for detailed setup and coding standards.
 
-```
-http://localhost:5000/api/v1
-```
-
-## Rate Limiting
-
-API requests are limited to 100 requests per minute per user. If you exceed this limit, you'll receive a 429 (Too Many Requests) response.
-
-## Response Format
-
-All responses are returned in JSON format with the following structure:
-
-```json
-{
-  "success": true,
-  "data": {},
-  "message": "Operation completed successfully"
-}
-```
-
-Or in case of an error:
-
-```json
-{
-  "success": false,
-  "error": {
-    "code": "ERROR_CODE",
-    "message": "Error description"
-  }
-}
-```
+---
+*Powered by AI, Governed by People, Anchored in Truth.*
