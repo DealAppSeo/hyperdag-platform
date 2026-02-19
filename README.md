@@ -1,37 +1,59 @@
-# AI Trinity Symphony: HyperDAG Platform 🎻🤖
+# 🎻 HyperDAG Platform: The Algorithmic Orchestration Bridge
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![MCP](https://img.shields.io/badge/MCP-v0.26.x-green)](https://modelcontextprotocol.io)
-[![GNN](https://img.shields.io/badge/GNN-Sovereign-blue)](https://aitrinitysymphony.com)
+[![GNN](https://img.shields.io/badge/Logic-Multiplicative_GNN-blue)](https://github.com/DealAppSeo/trinity-ecosystem/blob/main/docs/CORE_CONCEPTS.md#gnn-graph-neural-networks)
 
-> **The Intelligent Orchestration & Web3 Integration Engine**
+**The Intelligent Middleware and Web3 Integration Engine for the Trinity Symphony.**
 
-AI Trinity Symphony (HyperDAG Platform) is the algorithmic heart of a democratized AI future. We bridge high-level agentic intent with decentralized verification, ensuring that AI serves as a force for global democratization and the uplift of every ImageBearer (**Micah 6:8**).
-
-## 🕊️ Vision: Ecosystem over Fragment
-We are building a unified "principled swarm". Our goal is to align with developers who value a democratized and ethical AI future, where the community - not corporate gatekeepers - defines the standards of truth (**Philippians 4:8**).
-
-## 🧠 High-Intelligence Routing
-```mermaid
-graph TD
-    INTENT[User Intent] --> MCP[Model Context Protocol]
-    MCP --> ANFIS[ANFIS/LASSO Routing]
-    ANFIS --> BFT[BFT 3x3+3 Swarm]
-    BFT --> OUT[Ethical Execution]
-```
-
-## 🧬 Innovation Stack
-- **ANFIS + LASSO Routing**: Adaptive fuzzy logic for hyper-efficient agent tool selection.
-- **BFT 3x3+3 Architecture**: A Byzantine Fault Tolerant squad structure for high-integrity orchestration.
-- **Semantic Graph RAG**: Precise knowledge retrieval mapping intent to context.
-- **Trinary Learning**: Recursive loops between People and Agents.
-
-## 🛡️ Quantum-Hardened
-Our **QuantumVault** utilizes hybrid signatures (ECDSA + ML-DSA) to ensure agent sovereignty remains unassailable in the quantum age.
+HyperDAG Platform is the algorithmic heart of a democratized AI future. We bridge high-level agentic intent with decentralized verification, ensuring that AI serves as a force for global democratization and the uplift of every ImageBearer.
 
 ---
 
-## 🤝 Join the Mission
-We welcome contributors who share our vision for a safer, more ethical AI future. Patents are held defensively to protect the common good.
+## 🧠 Technical Innovation: Multiplicative GNN Coordination
 
-[Contributing](CONTRIBUTING.md) • [Security](SECURITY.md) • [Code of Conduct](CODE_OF_CONDUCT.md)
+The platform utilizes custom **Graph Neural Networks (GNN)** to map agent capabilities to mission requirements, ensuring optimal squad selection and autonomous execution.
+
+### 🔄 The Orchestration Engine
+```mermaid
+graph LR
+    User([User Request]) --> Intent{Intent Parser}
+    Intent -->|Graph Mapping| GNN[Multiplicative GNN]
+    GNN -->|Squad Selection| BFT[3-Ply BFT Swarm]
+    
+    subgraph "Web3 Integration"
+    BFT --> Bridge[ZKP RepID Bridge]
+    Bridge --> Protocol[(HyperDAG Protocol)]
+    end
+```
+
+### Key Technical Pillars
+- **[Multiplicative GNN Architecture](https://github.com/DealAppSeo/trinity-ecosystem/blob/main/docs/CORE_CONCEPTS.md#gnn-graph-neural-networks)**: Advanced capability-to-agent mapping for swarm intelligence.
+- **[ANFIS + LASSO Routing](https://github.com/DealAppSeo/trinity-ecosystem/blob/main/docs/CORE_CONCEPTS.md#anfis-adaptive-neuro-fuzzy-inference-system)**: Adaptive fuzzy logic for hyper-efficient model selection.
+- **Sovereign SDK**: Unified interface for agents to interact with the ZKP RepID ecosystem.
+- **[QuantumVault](https://github.com/DealAppSeo/trinity-ecosystem/blob/main/docs/CORE_CONCEPTS.md#zkp-repid-zero-knowledge-reputation-id)**: Secure, post-quantum key management for autonomous agent wallets.
+
+---
+
+## 🏗️ Ecosystem Governance
+
+| Repository | Role | Technology Stack |
+| :--- | :--- | :--- |
+| **[trinity-ecosystem](https://github.com/DealAppSeo/trinity-ecosystem)** | Conductor | Next.js, RadixUI, Supabase |
+| **[hyperdag-protocol](https://github.com/DealAppSeo/hyperdag-protocol)** | Truth | Solidity, Circom, Merkle DAG |
+| **[hyperdag-platform](https://github.com/DealAppSeo/hyperdag-platform)** | Bridge | TypeScript, GNN, Web3 Bridges |
+| **[trinity-symphony-shared](https://github.com/DealAppSeo/trinity-symphony-shared)** | Soul | Custom BFT, ANFIS, Ethics Logic |
+
+---
+
+## 🤝 Build the Future
+
+We are building a unified "principled swarm". We invite developers who share our vision for a safer, more ethical AI future to join our mission.
+
+- **[Technical Deep-Dive](https://github.com/DealAppSeo/trinity-ecosystem/blob/main/docs/CORE_CONCEPTS.md)**
+- **[Contributing](CONTRIBUTING.md)**
+- **[Security](SECURITY.md)**
+
+---
+
+**Mission: Help People Help People (Micah 6:8 | Philippians 4:8)**
